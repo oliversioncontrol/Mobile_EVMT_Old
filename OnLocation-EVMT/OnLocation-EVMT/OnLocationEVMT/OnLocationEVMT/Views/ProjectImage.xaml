@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OnLocationEVMT.Views.ProjectImage">
+  <ContentView.Content>
+        <ScrollView  BackgroundColor="#F8F8FF">
+        <StackLayout  x:Name="sname" Margin="10,0,10,0"></StackLayout>        
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

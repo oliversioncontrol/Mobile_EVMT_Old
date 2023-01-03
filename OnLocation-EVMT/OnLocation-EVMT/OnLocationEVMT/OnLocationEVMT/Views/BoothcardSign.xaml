@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:AddViewModel="clr-namespace:OnLocationEVMT.ViewModel"
+             xmlns:sign="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             x:Class="OnLocationEVMT.Views.BoothcardSign">
+    <ContentPage.BindingContext>
+        <AddViewModel:BoothcardSignVM x:Name="VM"/>
+    </ContentPage.BindingContext>
+    <Grid x:Name="gridMain" BackgroundColor="#F8F8FF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*">
+                <RowDefinition.Height>
+                    <OnIdiom x:TypeArguments="GridLength">
+                        <OnIdiom.Phone>
+                            <OnPlatform
+                            x:TypeArguments="GridLength"
+                            iOS="*"
+                            Android="*"/>
+                        </OnIdiom.Phone>
+                        <OnIdiom.Tablet>
+                            <OnPlatform
+                            x:TypeArguments="GridLength"
+                            iOS="300"
+                            Android="300"/>
+                        </OnIdiom.Tablet>
+                    </OnIdiom>
+
+                </RowDefinition.Height>
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <StackLayout  Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal" BackgroundColor="#666666">
+            <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="15,0,15,0">
+                <Grid.Margin>
+                    <OnPlatform x:TypeArguments="Thickness" iOS="15,20,15,0" Android="15,0,15,0" />
+                </Grid.Margin>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="64"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout  Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                    <Image Source="backarrowsmall.png" HorizontalOptions="Start" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="BackTapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="logo58.png"  HorizontalOptions="Start" VerticalOptions="Center"  Margin="10,0,0,0">
+                        <Image.HeightRequest>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="64" Tablet="64"/>
+                        </Image.HeightRequest>
+                        <Image.WidthRequest>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="64" Tablet="64"/>
+                        </Image.WidthRequest>
+                    </Image>
+                </StackLayout>
+                <Label Text="BOOTHCARD SIGNATURE" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" FontSize="26" Font="Calibri" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Margin="10,0,0,0">
+                    <Label.FontSize>
+                        <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="30"/>
+                    </Label.FontSize>
+                </Label>
+                <Image Source="HomeIcon.png"  Grid.Row="0" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="HomeTapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                    <Image.HeightRequest>
+                        <OnIdiom x:TypeArguments="x:Double" Phone="48" Tablet="64"/>
+                    </Image.HeightRequest>
+                    <Image.WidthRequest>
+                        <OnIdiom x:TypeArguments="x:Double" Phone="48" Tablet="64"/>
+                    </Image.WidthRequest>
+                </Image>
+            </Grid>
+        </StackLayout>
+        <StackLayout  HeightRequest="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#71D64A" Grid.Row="1" Margin="0,-6,0,0"/>
+
+        <Grid Grid.Row="2" Margin="15,0,15,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0" Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" Margin="0,0,20,0">
+                <Frame BackgroundColor="Black" HasShadow="False" Padding="0" CornerRadius="15" WidthRequest="30" HeightRequest="30">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CommandStrokeColorEvents}" CommandParameter="Black"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame BackgroundColor="#71D64A" HasShadow="False" Padding="0" CornerRadius="15" WidthRequest="30" HeightRequest="30">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CommandStrokeColorEvents}" CommandParameter="Green"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame BackgroundColor="Blue" HasShadow="False" Padding="0" CornerRadius="15" WidthRequest="30" HeightRequest="30">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CommandStrokeColorEvents}" CommandParameter="Blue"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame BackgroundColor="Red" HasShadow="False" Padding="0" CornerRadius="15" WidthRequest="30" HeightRequest="30">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CommandStrokeColorEvents}" CommandParameter="Red"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="Center">
+                <Frame BackgroundColor="#71D64A" HasShadow="False" Padding="0" CornerRadius="15" WidthRequest="30" HeightRequest="30">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CommandStrokeSizeEvents}" CommandParameter="Plus"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                    <Label Text="+"  TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="18"/>
+                        </Label.FontSize>
+                    </Label>
+                </Frame>
+                <Label Text="{Binding StrokeSize}" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.FontSize>
+                        <OnIdiom x:TypeArguments="x:Double" Phone="16" Tablet="16"/>
+                    </Label.FontSize>
+                </Label>
+                <Frame BackgroundColor="#71D64A" HasShadow="False" Padding="0" CornerRadius="15" WidthRequest="30" HeightRequest="30">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CommandStrokeSizeEvents}" CommandParameter="Minus"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                    <Label Text="-" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="18"/>
+                        </Label.FontSize>
+                    </Label>
+                </Frame>
+            </StackLayout>
+            <StackLayout Grid.Column="2" Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="Center">
+                <Frame  CornerRadius="15" BackgroundColor="#71D64A" HasShadow="False"  Padding="5,0,5,0" >
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CommandCancelReportEvents}"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                    <StackLayout Orientation="Horizontal"  Grid.Row="0" Grid.Column="1"  HorizontalOptions="CenterAndExpand">
+                        <Label Text="Back" TextColor="White"  HorizontalOptions="Center" VerticalOptions="Center" Margin="15,10,15,10">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                            </Label.FontSize>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+
+
+                <Frame CornerRadius="15" BackgroundColor="#71D64A" HasShadow="False"  Padding="5,0,5,0" >
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                    <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Label Text="Next" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"  Margin="15,10,15,10">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                            </Label.FontSize>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+        </Grid>
+        <StackLayout Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal" Margin="0,-6,0,0">
+            <sign:SignaturePadView x:Name="sign"  SignatureLineColor="Gray" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" StrokeWidth="{Binding StrokeSize}" BackgroundColor="White" Margin="15" StrokeColor="{Binding StrokeColor}" ></sign:SignaturePadView>
+        </StackLayout>
+        <!--<Grid Grid.Row="4" IsVisible="False" VerticalOptions="End" Margin="15,25,15,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Row="0" Grid.Column="0" HeightRequest="50" CornerRadius="15" BackgroundColor="#71D64A" HasShadow="False"  Padding="10,0,10,0" >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                </Frame.GestureRecognizers>
+                <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Generate Report" HorizontalOptions="Center" VerticalOptions="Center"  Margin="0,10,0,10">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                        </Label.FontSize>
+                    </Label>
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Row="0" Grid.Column="1" HeightRequest="50" CornerRadius="15" BackgroundColor="#71D64A" HasShadow="False"  Padding="10,0,10,0" >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CommandCancelReportEvents}"></TapGestureRecognizer>
+                </Frame.GestureRecognizers>
+                <StackLayout Orientation="Horizontal"  Grid.Row="0" Grid.Column="1"  HorizontalOptions="CenterAndExpand">
+                    <Label Text="Cancel" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,10,0,10">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                        </Label.FontSize>
+                    </Label>
+                </StackLayout>
+            </Frame>
+        </Grid>-->
+    </Grid>
+</ContentPage>

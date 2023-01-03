@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:AddViewModel="clr-namespace:OnLocationEVMT.ViewModel"
+             x:Class="OnLocationEVMT.Views.Resource">
+    <ContentPage.BindingContext>
+        <AddViewModel:ResourceVM x:Name="VM"/>
+    </ContentPage.BindingContext>
+    <Grid x:Name="gridMain" BackgroundColor="#F8F8FF">
+        <Grid x:Name="gridcontainer">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>           
+            <StackLayout Grid.Row="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#666666">                
+                <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="15,0,15,0">
+                    <Grid.Margin>
+                        <OnPlatform x:TypeArguments="Thickness" iOS="15,20,15,0" Android="15,0,15,0" />
+                    </Grid.Margin>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="64"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout  Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                        <Image Source="backarrowsmall.png" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BackTapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image Source="logo58.png"  HorizontalOptions="Start" VerticalOptions="Center"  Margin="10,0,0,0">
+                            <Image.HeightRequest>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="64" Tablet="64"/>
+                            </Image.HeightRequest>
+                            <Image.WidthRequest>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="64" Tablet="64"/>
+                            </Image.WidthRequest>
+                        </Image>
+                    </StackLayout>
+                    <Label Text="YOUR RESOURCES" Grid.Row="0" Grid.Column="1"  FontAttributes="Bold" FontSize="26" Font="Calibri" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Margin="10,0,0,0">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="30"/>
+                        </Label.FontSize>
+                    </Label>
+                    <Image Source="HomeIcon.png"  Grid.Row="0" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="HomeTapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                        <Image.HeightRequest>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="48" Tablet="64"/>
+                        </Image.HeightRequest>
+                        <Image.WidthRequest>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="48" Tablet="64"/>
+                        </Image.WidthRequest>
+                    </Image>
+                </Grid>
+            </StackLayout>
+            <StackLayout HeightRequest="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#71D64A" Grid.Row="1" Margin="0,-6,0,0"/>
+            <!--<ScrollView Grid.Row="1">-->
+            <Grid Grid.Row="2"  RowSpacing="10" ColumnSpacing="10" Margin="20,14,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Frame BackgroundColor="White" HasShadow="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Frame.GestureRecognizers>                        
+                        <TapGestureRecognizer Command="{Binding CommandCompanyNewsEvents}"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="news.png" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                            <Image.Margin>
+                                <OnIdiom x:TypeArguments="Thickness" Phone="0,0,0,0" Tablet="0,20,0,0"/>
+                            </Image.Margin>
+                        </Image>
+                        <Label Grid.Row="1" Font="Calibri" Text="Company News" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="24"/>
+                            </Label.FontSize>
+                            <Label.Margin>
+                                <OnIdiom x:TypeArguments="Thickness" Phone="0,0,0,0" Tablet="0,0,0,20"/>
+                            </Label.Margin>
+                        </Label>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="0"  Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  BackgroundColor="White" HasShadow="True" OutlineColor="Gray">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CommandCityGuideEvents}"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="city.png" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                            <Image.Margin>
+                                <OnIdiom x:TypeArguments="Thickness" Phone="0,0,0,0" Tablet="0,20,0,0"/>
+                            </Image.Margin>
+                        </Image>
+                        <Label Grid.Row="1" Font="Calibri" Text="City Guides" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="24"/>
+                            </Label.FontSize>
+                            <Label.Margin>
+                                <OnIdiom x:TypeArguments="Thickness" Phone="0,0,0,0" Tablet="0,0,0,20"/>
+                            </Label.Margin>
+                        </Label>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="1" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  BackgroundColor="White" HasShadow="True">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CommandTradeShoweEvents}"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="trade.png" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                            <Image.Margin>
+                                <OnIdiom x:TypeArguments="Thickness" Phone="0,0,0,0" Tablet="0,20,0,0"/>
+                            </Image.Margin>
+                        </Image>
+                        <Label Grid.Row="1" Font="Calibri" Text="Trade Shows" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="24"/>
+                            </Label.FontSize>
+                            <Label.Margin>
+                                <OnIdiom x:TypeArguments="Thickness" Phone="0,0,0,0" Tablet="0,0,0,20"/>
+                            </Label.Margin>
+                        </Label>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="1"  Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  BackgroundColor="White" HasShadow="True">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CommandKeyContactsEvents}"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="key.png" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                            <Image.Margin>
+                                <OnIdiom x:TypeArguments="Thickness" Phone="0,0,0,0" Tablet="0,20,0,0"/>
+                            </Image.Margin>
+                        </Image>
+                        <Label Grid.Row="1" Font="Calibri" Text="Key Contacts" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="24"/>
+                            </Label.FontSize>
+                            <Label.Margin>
+                                <OnIdiom x:TypeArguments="Thickness" Phone="0,0,0,0" Tablet="0,0,0,20"/>
+                            </Label.Margin>
+                        </Label>
+                    </Grid>
+                </Frame>
+            </Grid>
+            <!--</ScrollView>-->
+        </Grid>
+    </Grid>
+</ContentPage>

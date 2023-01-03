@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:AddViewModel="clr-namespace:OnLocationEVMT.ViewModel"
+             x:Class="OnLocationEVMT.Views.Home" NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <AddViewModel:HomeVM x:Name="VM"/>
+    </ContentPage.BindingContext>
+    <Grid x:Name="gridMain" BackgroundColor="#F8F8FF">
+        <Grid x:Name="gridcontainer">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#666666" HeightRequest="130">
+                <StackLayout.HeightRequest>
+                    <OnIdiom x:TypeArguments="x:Double" Phone="130" Tablet="150"/>
+                </StackLayout.HeightRequest>
+                <Grid Margin="0,20,0,20" RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image Grid.Row="0" Source="logo58.png" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                            <Image.HeightRequest>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="80" Tablet="80"/>
+                            </Image.HeightRequest>
+                            <Image.WidthRequest>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="80" Tablet="80"/>
+                            </Image.WidthRequest>
+                        </Image>
+                    </StackLayout>
+                    <!--<StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,-6,0,0">-->
+                    <Grid Grid.Row="1"  Margin="0,-15,0,0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="64"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="64"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="HOME" Grid.Row="0" Grid.Column="1" FontSize="26" Font="Calibri" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Margin="0,0,0,0">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="30"/>
+                            </Label.FontSize>
+                        </Label>
+                        <Image Grid.Row="0" Grid.Column="2" Source="LogoutIcon.png" VerticalOptions="Center" HorizontalOptions="End" Margin="0,0,20,20" IsVisible="{Binding IsLogout}">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CommandLogoutCommandEvents}"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                </Grid>
+            </StackLayout>
+            <StackLayout Grid.Row="1" HeightRequest="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#71D64A"  Margin="0,-6,0,0"/>
+            <Grid Grid.Row="2"  x:Name="MainContainer" RowSpacing="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ScrollView Grid.Row="0" Margin="0,-3,0,-3">
+                    <Grid RowSpacing="7" ColumnSpacing="10" Margin="15,7,15,0" Padding="5,0,5,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Row="0"   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  BackgroundColor="White" HasShadow="True" OutlineColor="Gray">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CommandYourResourceEvents}"></TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Image  Source="yourresources.png"  VerticalOptions="CenterAndExpand" HorizontalOptions="Center" HeightRequest="60" WidthRequest="60">
+                                        <Image.Margin>
+                                            <OnIdiom x:TypeArguments="Thickness" Phone="0,0,0,0" Tablet="0,20,0,20"/>
+                                        </Image.Margin>
+                                    </Image>
+                                </StackLayout>
+                                <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label x:Name="lblYourResource" Text="Your" FontSize="Large"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="30"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label x:Name="lblResource" Text="Resources" FontSize="Large" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="30"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                        <Frame Grid.Row="1"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  BackgroundColor="White" HasShadow="True">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CommandYourProjectEvents}"></TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Image  Source="yourproject.png"  VerticalOptions="CenterAndExpand" HorizontalOptions="Center" HeightRequest="60" WidthRequest="60">
+                                        <Image.Margin>
+                                            <OnIdiom x:TypeArguments="Thickness" Phone="0,0,0,0" Tablet="0,20,0,20"/>
+                                        </Image.Margin>
+                                    </Image>
+                                </StackLayout>
+                                <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label x:Name="lblYourProject" Text="Your" FontSize="Large"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="30"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label x:Name="lblProject" Text="Projects" FontSize="Large" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="30"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                        <Frame Grid.Row="2"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CommandYourTeamEvents}"></TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Image  Source="yourteam.png"  VerticalOptions="CenterAndExpand" HorizontalOptions="Center" HeightRequest="60" WidthRequest="60">
+                                        <Image.Margin>
+                                            <OnIdiom x:TypeArguments="Thickness" Phone="0,0,0,0" Tablet="0,20,0,20"/>
+                                        </Image.Margin>
+                                    </Image>
+                                </StackLayout>
+                                <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label x:Name="lblYourTeam" Text="Your" FontSize="Large" LineBreakMode="WordWrap"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="30"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label x:Name="lblTeam" Text="Team" FontSize="Large" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="30"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                </StackLayout>
+                            </Grid>
+
+                        </Frame>
+                        <Grid Grid.Row="3" RowSpacing="0" ColumnSpacing="0" IsVisible="{Binding IsBoothCards}" Margin="0,0,0,7">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Frame Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,0,3,0" Padding="0,5,0,5">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding CommandBoothCardEvents}"></TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+                                <Grid RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Grid.Row="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Image  Source="Onboothcard.png"  VerticalOptions="CenterAndExpand" HorizontalOptions="Center" HeightRequest="60" WidthRequest="60">
+                                            <Image.Margin>
+                                                <OnIdiom x:TypeArguments="Thickness" Phone="0,0,0,0" Tablet="0,20,0,20"/>
+                                            </Image.Margin>
+                                        </Image>
+                                    </StackLayout>
+                                    <Grid Grid.Row="1" RowSpacing="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" x:Name="lblboothcard" Text="Project" FontSize="Large"  HorizontalOptions="Center" VerticalOptions="End">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="30"/>
+                                            </Label.FontSize>
+                                        </Label>
+                                        <Label  Grid.Row="1" x:Name="lblboothcard1" Text="Boothcards" FontSize="Large" HorizontalOptions="Center" VerticalOptions="End">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="30"/>
+                                            </Label.FontSize>
+                                        </Label>
+                                    </Grid>
+                                    
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="3,0,0,0" Padding="0,5,0,5">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding CommandEmpAccoladesEvents}"></TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+                                <Grid RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Grid.Row="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Image  Source="empacc.png"  VerticalOptions="CenterAndExpand" HorizontalOptions="Center" HeightRequest="60" WidthRequest="60">
+                                            <Image.Margin>
+                                                <OnIdiom x:TypeArguments="Thickness" Phone="0,0,0,0" Tablet="0,20,0,20"/>
+                                            </Image.Margin>
+                                        </Image>
+                                        <!--EmpAccolades-->
+                                    </StackLayout>
+                                    <Grid Grid.Row="1" RowSpacing="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Text="Employee" FontSize="Large"  HorizontalOptions="Center" VerticalOptions="End">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="30"/>
+                                            </Label.FontSize>
+                                        </Label>
+                                        <Label  Grid.Row="1"  Text="Accolades" FontSize="Large" HorizontalOptions="Center" VerticalOptions="End">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="30"/>
+                                            </Label.FontSize>
+                                        </Label>
+                                    </Grid>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                        
+                    </Grid>
+                </ScrollView>
+                <StackLayout Grid.Row="1" Orientation="Vertical"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                    <Grid Margin="0,5,0,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0" Grid.Column="0" Source="mail.png" VerticalOptions="CenterAndExpand" HorizontalOptions="End" HeightRequest="30" WidthRequest="30">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenSocialLinkEvents}" CommandParameter="0"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                            <Image.HeightRequest>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="32" Tablet="48"/>
+                            </Image.HeightRequest>
+                            <Image.WidthRequest>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="32" Tablet="48"/>
+                            </Image.WidthRequest>
+                        </Image>
+                        <Image Grid.Row="0" Grid.Column="1" Source="linkedin.png" VerticalOptions="CenterAndExpand" HeightRequest="30" WidthRequest="30" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenSocialLinkEvents}" CommandParameter="2"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                            <Image.HeightRequest>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="32" Tablet="48"/>
+                            </Image.HeightRequest>
+                            <Image.WidthRequest>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="32" Tablet="48"/>
+                            </Image.WidthRequest>
+                        </Image>
+                        <Image Grid.Row="0" Grid.Column="2" Source="instagram.png" VerticalOptions="CenterAndExpand"  HeightRequest="30" WidthRequest="30">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenSocialLinkEvents}" CommandParameter="4"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                            <Image.HeightRequest>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="32" Tablet="48"/>
+                            </Image.HeightRequest>
+                            <Image.WidthRequest>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="32" Tablet="48"/>
+                            </Image.WidthRequest>
+                        </Image>
+                        <Image Grid.Row="0" Grid.Column="3" Source="twitter.png" VerticalOptions="CenterAndExpand"  HeightRequest="30" WidthRequest="30">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenSocialLinkEvents}" CommandParameter="3"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                            <Image.HeightRequest>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="32" Tablet="48"/>
+                            </Image.HeightRequest>
+                            <Image.WidthRequest>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="32" Tablet="48"/>
+                            </Image.WidthRequest>
+                        </Image>
+                        <Image Grid.Row="0" Grid.Column="4" Source="facebook.png" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" HeightRequest="30" WidthRequest="30">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenSocialLinkEvents}" CommandParameter="1"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                            <Image.HeightRequest>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="32" Tablet="48"/>
+                            </Image.HeightRequest>
+                            <Image.WidthRequest>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="32" Tablet="48"/>
+                            </Image.WidthRequest>
+                        </Image>                                            
+                        <Label Text="{Binding VersionName}" Grid.Row="0" Grid.Column="4" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" FontSize="14" Margin="0,0,10,0"></Label>
+
+                        <!--</StackLayout>-->
+
+                    </Grid>
+                </StackLayout>
+            </Grid>
+
+
+
+
+        </Grid>
+    </Grid>
+
+</ContentPage>

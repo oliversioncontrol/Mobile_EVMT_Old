@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:AddViewModel="clr-namespace:OnLocationEVMT.ViewModel"
+             x:Class="OnLocationEVMT.Views.OrderDetailSupervision">
+    <ContentPage.BindingContext>
+        <AddViewModel:ODSupervisionVM x:Name="VM"/>
+    </ContentPage.BindingContext>
+    <Grid x:Name="gridMain" BackgroundColor="#F8F8FF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>          
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal" BackgroundColor="#666666">
+            <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="15,0,15,0">
+                <Grid.Margin>
+                    <OnPlatform x:TypeArguments="Thickness" iOS="15,20,15,0" Android="15,0,15,0" />
+                </Grid.Margin>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="64"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout  Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                    <Image Source="backarrowsmall.png" HorizontalOptions="Start" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="BackTapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="logo58.png"  HorizontalOptions="Start" VerticalOptions="Center"  Margin="10,0,0,0">
+                        <Image.HeightRequest>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="64" Tablet="64"/>
+                        </Image.HeightRequest>
+                        <Image.WidthRequest>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="64" Tablet="64"/>
+                        </Image.WidthRequest>
+                    </Image>
+                </StackLayout>
+                <Label Text="SUPERVISION DETAILS" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" FontSize="26" Font="Calibri" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Margin="10,0,0,0">
+                    <Label.FontSize>
+                        <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="30"/>
+                    </Label.FontSize>
+                </Label>
+                <Image Source="HomeIcon.png"  Grid.Row="0" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="HomeTapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                    <Image.HeightRequest>
+                        <OnIdiom x:TypeArguments="x:Double" Phone="48" Tablet="64"/>
+                    </Image.HeightRequest>
+                    <Image.WidthRequest>
+                        <OnIdiom x:TypeArguments="x:Double" Phone="48" Tablet="64"/>
+                    </Image.WidthRequest>
+                </Image>
+            </Grid>
+        </StackLayout>
+        <StackLayout HeightRequest="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#71D64A" Grid.Row="1" Margin="0,-6,0,0"/>
+        <ListView Grid.Row="2" Margin="0,0,0,10"  x:Name="LstOrderDetails"  HasUnevenRows="True"  ItemsSource="{Binding LstOrderDetailSuperv}" SeparatorVisibility="None" ItemTapped="LstOrderDetails_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="0,5,0,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Frame Grid.Row="0" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" HasShadow="True" BackgroundColor="White" Margin="15,0,15,0" Padding="1" HeightRequest="160">
+                                <Frame.Margin>
+                                    <OnPlatform x:TypeArguments="Thickness" iOS="15,8,15,8" Android="15,5,15,5" />
+                                </Frame.Margin>
+                                <Frame.HeightRequest>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>
+                                            <OnPlatform x:TypeArguments="x:Double" iOS="137" Android="150" />
+                                        </OnIdiom.Phone>
+                                        <OnIdiom.Tablet>
+                                            <OnPlatform x:TypeArguments="x:Double" iOS="168" Android="175" />
+                                        </OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </Frame.HeightRequest>
+                                <Grid BackgroundColor="White">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>                                       
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.ColumnSpan="2" >
+                                        <Label Text="Installation" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="16" Tablet="20"/>
+                                            </Label.FontSize>
+                                        </Label>
+                                    </StackLayout>
+                                    <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="1"  Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand"></BoxView>
+                                    <Grid Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>                                         
+                                        <Label Text="On Location" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="0" Margin="5,5,0,5">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                            </Label.FontSize>
+                                        </Label>
+                                        <Image Source="{Binding OLImg}" Grid.Row="0" Grid.Column="1"></Image>
+                                        <Label Text="Client"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="2" Margin="5,5,0,5">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                            </Label.FontSize>
+                                        </Label>
+                                        <Image Source="{Binding ClientImg}" Grid.Row="0" Grid.Column="3"></Image>
+                                        <Label Text="Exhibit House" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="4" Margin="5,5,0,5">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                            </Label.FontSize>
+                                        </Label>
+                                        <Image Source="{Binding ExhibitImg}" Grid.Row="0" Grid.Column="5" ></Image>
+                                    </Grid>
+                                                                   
+                                    <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="3" Grid.ColumnSpan="2"></BoxView>                                   
+                                    <Label Text="Name"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="4" Grid.Column="0" Margin="5,5,0,5">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label Text="{Binding SupInstallContact}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" Font="Calibri" Grid.Row="4" Grid.Column="1"  Margin="0,5,5,5">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="5" Grid.ColumnSpan="2"></BoxView>
+                                    <Label Text="Cell Phone #"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="6" Grid.Column="0" Margin="5,5,0,5">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label Text="{Binding SupInstallContactPhone}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" Font="Calibri" Grid.Row="6" Grid.Column="1"  Margin="0,5,5,5">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                        </Label.FontSize>
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding AutoCall}" CommandParameter="{Binding SupInstallContactPhone}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="1" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" HasShadow="True" BackgroundColor="White" Margin="15,0,15,0" Padding="1" HeightRequest="160">
+                                <Frame.Margin>
+                                    <OnPlatform x:TypeArguments="Thickness" iOS="15,8,15,8" Android="15,0,15,0" />
+                                </Frame.Margin>
+                                <Frame.HeightRequest>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>
+                                            <OnPlatform x:TypeArguments="x:Double" iOS="137" Android="150" />
+                                        </OnIdiom.Phone>
+                                        <OnIdiom.Tablet>
+                                            <OnPlatform x:TypeArguments="x:Double" iOS="168" Android="175" />
+                                        </OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </Frame.HeightRequest>
+                                <Grid  BackgroundColor="White">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>                                       
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.ColumnSpan="2" >
+                                        <Label Text="Dismantle" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="16" Tablet="20"/>
+                                            </Label.FontSize>
+                                        </Label>
+                                    </StackLayout>
+                                    <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="1"  Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand"></BoxView>
+                                    <Grid Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="On Location" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="0" Margin="5,5,0,5">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                            </Label.FontSize>
+                                        </Label>
+                                        <Image Source="{Binding DisOLImg}" Grid.Row="0" Grid.Column="1"></Image>
+                                        <Label Text="Client"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="2" Margin="5,5,0,5">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                            </Label.FontSize>
+                                        </Label>
+                                        <Image Source="{Binding DisClientImg}" Grid.Row="0" Grid.Column="3"></Image>
+                                        <Label Text="Exhibit House" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="4" Margin="5,5,0,5">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                            </Label.FontSize>
+                                        </Label>
+                                        <Image Source="{Binding DisExhibitImg}" Grid.Row="0" Grid.Column="5" ></Image>
+                                    </Grid>
+
+                                    <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="3" Grid.ColumnSpan="2"></BoxView>
+                                    <Label Text="Name"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="4" Grid.Column="0" Margin="5,5,0,5">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label Text="{Binding SupDismantleContact}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" Font="Calibri" Grid.Row="4" Grid.Column="1"  Margin="0,5,5,5">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="5" Grid.ColumnSpan="2"></BoxView>
+                                    <Label Text="Cell Phone #"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="6" Grid.Column="0" Margin="5,5,0,5">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label Text="{Binding SupDismantleContactPhone}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" Font="Calibri" Grid.Row="6" Grid.Column="1"  Margin="0,5,5,5">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                        </Label.FontSize>
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding AutoCall}" CommandParameter="{Binding SupDismantleContactPhone}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>       
+    </Grid>
+</ContentPage>

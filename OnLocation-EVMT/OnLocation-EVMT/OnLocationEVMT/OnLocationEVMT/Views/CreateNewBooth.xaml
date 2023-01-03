@@ -1,0 +1,1528 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:AddViewModel="clr-namespace:OnLocationEVMT.ViewModel"
+              xmlns:AddControl="clr-namespace:OnLocationEVMT.Controls"
+             x:Class="OnLocationEVMT.Views.CreateNewBooth">
+    <ContentPage.BindingContext>
+        <AddViewModel:CreateNewBoothVM x:Name="VM"/>
+    </ContentPage.BindingContext>
+    <Grid x:Name="gridMain" BackgroundColor="#F8F8FF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal" BackgroundColor="#666666">
+            <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="15,0,15,0">
+                <Grid.Margin>
+                    <OnPlatform x:TypeArguments="Thickness" iOS="15,20,15,0" Android="15,0,15,0" />
+                </Grid.Margin>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="64"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout  Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                    <Image Source="backarrowsmall.png" HorizontalOptions="Start" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="BackTapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="logo58.png"  HorizontalOptions="Start" VerticalOptions="Center"  Margin="10,0,0,0">
+                        <Image.HeightRequest>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="64" Tablet="64"/>
+                        </Image.HeightRequest>
+                        <Image.WidthRequest>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="64" Tablet="64"/>
+                        </Image.WidthRequest>
+                    </Image>
+                </StackLayout>
+                <Label Text="CREATE BOOTHCARD" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" FontSize="26" Font="Calibri" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Margin="10,0,0,0">
+                    <Label.FontSize>
+                        <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="30"/>
+                    </Label.FontSize>
+                </Label>
+                <Image Source="HomeIcon.png"  Grid.Row="0" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="HomeTapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                    <Image.HeightRequest>
+                        <OnIdiom x:TypeArguments="x:Double" Phone="48" Tablet="64"/>
+                    </Image.HeightRequest>
+                    <Image.WidthRequest>
+                        <OnIdiom x:TypeArguments="x:Double" Phone="48" Tablet="64"/>
+                    </Image.WidthRequest>
+                </Image>
+            </Grid>
+        </StackLayout>
+        <StackLayout HeightRequest="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#71D64A" Grid.Row="1" Margin="0,-6,0,0"/>
+        <StackLayout Grid.Row="2" Margin="0,-6,0,0">
+            <Grid ColumnSpacing="0" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="2"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout  Grid.Row="0" Grid.Column="0" BackgroundColor="#71D64A"   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="StepOneClick"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Step-1" FontSize="16" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
+                </StackLayout>
+                <StackLayout    Grid.Row="0" Grid.Column="1" BackgroundColor="#71D64A"   VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="StepTwoClick"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Step-2" FontSize="16" TextColor="White"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
+                </StackLayout>
+                <StackLayout    Grid.Row="0" Grid.Column="2" BackgroundColor="#71D64A"   VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="StepThreeClick"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Step-3" FontSize="16" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
+                </StackLayout>
+                <StackLayout  Grid.Row="0" Grid.Column="3" BackgroundColor="#71D64A"   VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="StepFourClick_Tapped"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Step-4" FontSize="16" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
+                </StackLayout>
+                <BoxView x:Name="boxOpen" Grid.Column="0" Grid.Row="1"/>
+                <BoxView x:Name="boxPending" Grid.Column="1" Grid.Row="1"/>
+                <BoxView x:Name="boxClose" Grid.Column="2" Grid.Row="1"/>
+                <BoxView x:Name="boxStep4" Grid.Column="3" Grid.Row="1"/>
+            </Grid>
+        </StackLayout>
+
+        <Grid Grid.Row="3" x:Name="StkHeader" Margin="0,5,0,0">
+            <ScrollView >
+                <Grid Margin="0,5,0,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Frame Grid.Row="0" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" HasShadow="True" BackgroundColor="White" Margin="15,0,15,0" Padding="1">
+                        <Frame.Margin>
+                            <OnPlatform x:TypeArguments="Thickness" iOS="15,8,15,8" Android="15,0,15,0" />
+                        </Frame.Margin>
+                        <Grid Grid.Row="2"  RowSpacing="2" BackgroundColor="White">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Project#" TextColor="#71D64A" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="0" Margin="5,10,0,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="0" Grid.Row="0" Grid.Column="1"   Margin="30,5,5,5">
+                                <Entry Text="{Binding ProjectId}" Keyboard="Numeric" HorizontalTextAlignment="End" FontSize="12"  HorizontalOptions="FillAndExpand"  Unfocused="EntryProject_Unfocused">
+                                    <Entry.Behaviors>
+                                        <AddControl:EntryLengthValidatorBehavior MaxLength="10"/>
+                                    </Entry.Behaviors>
+                                    <Entry.FontSize>
+                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                    </Entry.FontSize>
+                                </Entry>
+                            </AddControl:CustomFrames>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="1" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Work Date" TextColor="#71D64A" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="2" Grid.Column="0" Margin="5,10,0,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="0" Grid.Row="2" Grid.Column="1"   Margin="30,5,5,5">
+                                <StackLayout Orientation="Horizontal" BackgroundColor="White" HorizontalOptions="FillAndExpand">
+                                    <StackLayout.BackgroundColor>
+                                        <OnPlatform x:TypeArguments="Color" Android="White" iOS="Transparent"></OnPlatform>
+                                    </StackLayout.BackgroundColor>
+                                    <DatePicker x:Name="WorkDate_Picker"  IsVisible="True" Date="{Binding WorkDate}"  VerticalOptions="Center"  HorizontalOptions="FillAndExpand" />
+                                    <Image Source="calendar.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" Margin="0,0,5,0">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer x:Name="EndDatePkr" Tapped="WorkDate_Tapped">
+                                            </TapGestureRecognizer>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                            </AddControl:CustomFrames>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="3" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Supervisor Present" TextColor="#71D64A" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="4" Grid.Column="0" Margin="5,10,0,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Image Source="{Binding SupervisorPresent}" Grid.Row="4" Grid.Column="1" Margin="0,5,5,5" HorizontalOptions="End" VerticalOptions="FillAndExpand">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding CommandSupPresentEvents}"></TapGestureRecognizer>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="5" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Supervisor Name" TextColor="#71D64A" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="6" Grid.Column="0" Margin="5,10,0,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="0" Grid.Row="6" Grid.Column="1"   Margin="30,5,5,5">
+                                <Entry Text="{Binding SupervisorName}" FontSize="12" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand">
+                                    <Entry.Behaviors>
+                                        <AddControl:EntryLengthValidatorBehavior MaxLength="64"/>
+                                    </Entry.Behaviors>
+                                    <Entry.FontSize>
+                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                    </Entry.FontSize>
+                                </Entry>
+                            </AddControl:CustomFrames>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="7" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Exhibitor" TextColor="#71D64A" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="8" Grid.Column="0" Margin="5,10,0,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="{Binding Exhibitor}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="8" Grid.Column="1" LineBreakMode="TailTruncation" Margin="0,10,5,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="9" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Booth#" TextColor="#71D64A" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="10" Grid.Column="0" Margin="5,10,0,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="{Binding Booth}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="10" Grid.Column="1" LineBreakMode="TailTruncation" Margin="0,10,5,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="11" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Show Name" TextColor="#71D64A" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="12" Grid.Column="0" Margin="5,10,0,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="{Binding Show}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="12" Grid.Column="1" LineBreakMode="TailTruncation" Margin="0,10,5,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="13" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Show City" TextColor="#71D64A" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="14" Grid.Column="0" Margin="5,10,0,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="{Binding ShowCity}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="14" Grid.Column="1" LineBreakMode="TailTruncation" Margin="0,10,5,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="15" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Account Executive" TextColor="#71D64A" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="16" Grid.Column="0" Margin="5,10,0,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="{Binding AccountExc}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="16" Grid.Column="1" LineBreakMode="TailTruncation" Margin="0,10,5,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="17" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Boothcard" TextColor="#71D64A" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="18" Grid.Column="0" Margin="5,10,0,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="{Binding Boothcard}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="18" Grid.Column="1" LineBreakMode="TailTruncation" Margin="0,10,5,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <!--<BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="19" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Date Submitted" TextColor="#71D64A" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="20" Grid.Column="0" Margin="5,10,0,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="{Binding DateSubmitted}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="20" Grid.Column="1" LineBreakMode="TailTruncation" Margin="0,10,5,10">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>-->
+                            <Grid Grid.Row="21" Grid.ColumnSpan="2" VerticalOptions="End" Margin="15,20,15,20" IsVisible="{Binding IsPortfolioSubmit}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Frame Grid.Row="0" Grid.Column="0" HeightRequest="50" CornerRadius="15" BackgroundColor="#71D64A" HasShadow="False"  Padding="10,0,10,0" >
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CommandPortfolioEvents}" CommandParameter="Save"></TapGestureRecognizer>
+                                    </Frame.GestureRecognizers>
+                                    <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                        <Label Text="Save" HorizontalOptions="Center" VerticalOptions="Center"  Margin="0,10,0,10">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="16" Tablet="24"/>
+                                            </Label.FontSize>
+                                        </Label>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame Grid.Row="0" Grid.Column="1" HeightRequest="50" CornerRadius="15" BackgroundColor="#71D64A" HasShadow="False"  Padding="10,0,10,0" >
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CommandPortfolioEvents}" CommandParameter="reset"></TapGestureRecognizer>
+                                    </Frame.GestureRecognizers>
+                                    <StackLayout Orientation="Horizontal"  Grid.Row="0" Grid.Column="1"  HorizontalOptions="CenterAndExpand">
+                                        <Label Text="Reset" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,10,0,10">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="16" Tablet="24"/>
+                                            </Label.FontSize>
+                                        </Label>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </ScrollView>
+        </Grid>
+        <Grid Grid.Row="3"  x:Name="StkEmployee" IsVisible="False">
+            <Grid>
+                <StackLayout Orientation="Vertical" Margin="0,-6,0,0">
+                    <Image Source="Addemployee.png"  HorizontalOptions="EndAndExpand" Margin="0,8,15,0"  IsVisible="{Binding IsFinalSubmitted}">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CommandAddEmployeeEvents}"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <ListView BackgroundColor="#F8F8FF" Margin="0,10,0,10"  x:Name="LstLaborDetails"  HasUnevenRows="True"  ItemsSource="{Binding LstLaborDetails}" SeparatorVisibility="None" ItemTapped="LstOpenLoans_ItemTapped">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Margin="0,5,0,5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <StackLayout Grid.Row="0">
+                                            <Frame  HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" HasShadow="True" BackgroundColor="White" Margin="15,0,15,0" Padding="1">
+                                                <Frame.Margin>
+                                                    <OnPlatform x:TypeArguments="Thickness" iOS="15,8,15,8" Android="15,0,15,0" />
+                                                </Frame.Margin>
+                                                <Grid Grid.Row="2"  RowSpacing="2" BackgroundColor="White">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Text="Employee" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="0" Margin="15,5,0,5">
+                                                        <Label.FontSize>
+                                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                    <Label Text="{Binding EmployeeName}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="0" Grid.Column="1" Margin="0,5,5,5">
+                                                        <Label.FontSize>
+                                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                    <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="1" Grid.ColumnSpan="2"></BoxView>
+                                                    <Label Text="Task"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="2" Grid.Column="0" Margin="15,5,0,5">
+                                                        <Label.FontSize>
+                                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                    <Label Text="{Binding TaskDescription}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="2" Grid.Column="1" Margin="0,5,5,5">
+                                                        <Label.FontSize>
+                                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                    <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="3" Grid.ColumnSpan="2"></BoxView>
+                                                    <Grid Grid.Row="4" Grid.ColumnSpan="2" Margin="10,0,10,0">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label Text="Billable"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="0" Margin="5,5,0,5">
+                                                            <Label.FontSize>
+                                                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                            </Label.FontSize>
+                                                        </Label>
+                                                        <AddControl:CustomFrames HasShadow="False" OutlineColor="#eae8e8" Grid.Row="0" Grid.Column="1"  HorizontalOptions="Start" VerticalOptions="FillAndExpand"  Margin="0,5,5,5" Padding="2">                                                           
+                                                            <Image Source="{Binding ImgBillable}" HorizontalOptions="FillAndExpand" WidthRequest="28" HeightRequest="28"></Image>                                                        
+                                                        </AddControl:CustomFrames>
+                                                        <Label Text="Payroll"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="End" Font="Calibri" Grid.Row="0" Grid.Column="2" Margin="5,5,0,5">
+                                                            <Label.FontSize>
+                                                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                            </Label.FontSize>
+                                                        </Label>
+                                                        <AddControl:CustomFrames HasShadow="False" OutlineColor="#eae8e8" Grid.Row="0" Grid.Column="3"  HorizontalOptions="Start" VerticalOptions="FillAndExpand" Margin="0,5,5,5" Padding="2">                                                            
+                                                            <Image Source="{Binding ImgPayroll}" HorizontalOptions="FillAndExpand" WidthRequest="28" HeightRequest="28"></Image>                                                            
+                                                        </AddControl:CustomFrames>
+                                                        <Label Text="Partner" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="End" Font="Calibri" Grid.Row="0" Grid.Column="4" Margin="5,5,0,5">
+                                                            <Label.FontSize>
+                                                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                            </Label.FontSize>
+                                                        </Label>
+                                                        <AddControl:CustomFrames HasShadow="False" OutlineColor="#eae8e8" Grid.Row="0" Grid.Column="5"  HorizontalOptions="End" VerticalOptions="FillAndExpand" Margin="0,5,5,5" Padding="2">                                                          
+                                                            <Image Source="{Binding ImgPartner}" HorizontalOptions="FillAndExpand" WidthRequest="28" HeightRequest="28"></Image>                                                           
+                                                        </AddControl:CustomFrames>
+                                                    </Grid>
+                                                    <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="5" Grid.ColumnSpan="2"></BoxView>
+                                                    <Label Text="Start Time"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="6" Grid.Column="0" Margin="15,5,0,5">
+                                                        <Label.FontSize>
+                                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                    <Label Text="{Binding StartTime}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="6" Grid.Column="1" Margin="0,5,15,5">
+                                                        <Label.FontSize>
+                                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                    <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="7" Grid.ColumnSpan="2"></BoxView>
+                                                    <Label Text="End Time"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="8" Grid.Column="0" Margin="15,5,0,5">
+                                                        <Label.FontSize>
+                                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                    <Label Text="{Binding EndTime}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="8" Grid.Column="1" Margin="0,5,15,5">
+                                                        <Label.FontSize>
+                                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                    <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="9" Grid.ColumnSpan="2"></BoxView>
+                                                    <Label Text="Lunch(Hrs)" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="10" Grid.Column="0" Margin="15,5,0,5">
+                                                        <Label.FontSize>
+                                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                    <Label Text="{Binding LunchTime}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="10" Grid.Column="1" Margin="0,5,5,5">
+                                                        <Label.FontSize>
+                                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                    <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="11" Grid.ColumnSpan="2"></BoxView>
+                                                    <Grid Grid.Row="12" Grid.ColumnSpan="2" Margin="10,0,10,0">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label Text="ST" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="0" Margin="5,5,0,5">
+                                                            <Label.FontSize>
+                                                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                            </Label.FontSize>
+                                                        </Label>
+                                                        <AddControl:CustomFrames HasShadow="False" OutlineColor="#eae8e8" Grid.Row="0" Grid.Column="1"  HorizontalOptions="Start" VerticalOptions="FillAndExpand" Margin="0,5,5,5" Padding="2">                                                            
+                                                            <Label Text="{Binding ST}" HorizontalTextAlignment="Center" HorizontalOptions="Center" WidthRequest="50" Margin="0,3,0,3" >
+                                                                <Label.FontSize>
+                                                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                                </Label.FontSize>
+                                                            </Label>                                                         
+                                                        </AddControl:CustomFrames>
+                                                        <Label Text="OT" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="End" Font="Calibri" Grid.Row="0" Grid.Column="2" Margin="5,5,0,5">
+                                                            <Label.FontSize>
+                                                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                            </Label.FontSize>
+                                                        </Label>
+                                                        <AddControl:CustomFrames HasShadow="False" OutlineColor="#eae8e8" Grid.Row="0" Grid.Column="3"  HorizontalOptions="Start" VerticalOptions="FillAndExpand" Margin="0,5,5,5" Padding="2">                                                            
+                                                            <Label Text="{Binding OT}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="FillAndExpand" WidthRequest="50"  Margin="0,3,0,3" >
+                                                                <Label.FontSize>
+                                                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                                </Label.FontSize>
+                                                            </Label>                                                       
+                                                        </AddControl:CustomFrames>
+                                                        <Label Text="DT" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="End" Font="Calibri" Grid.Row="0" Grid.Column="4" Margin="5,5,0,5">
+                                                            <Label.FontSize>
+                                                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                            </Label.FontSize>
+                                                        </Label>
+                                                        <AddControl:CustomFrames HasShadow="False" OutlineColor="#eae8e8" Grid.Row="0" Grid.Column="5"  HorizontalOptions="End" VerticalOptions="FillAndExpand"  Margin="0,5,5,5" Padding="2">                                                           
+                                                            <Label Text="{Binding DT}" HorizontalTextAlignment="Center" HorizontalOptions="Center" WidthRequest="50"  Margin="0,3,0,3" >
+                                                                <Label.FontSize>
+                                                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                                </Label.FontSize>
+                                                            </Label>                                                     
+                                                        </AddControl:CustomFrames>
+                                                    </Grid>
+                                                    <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="13" Grid.ColumnSpan="2"></BoxView>
+                                                    <Label Text="Total"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="14" Grid.Column="0" Margin="15,5,0,5">
+                                                        <Label.FontSize>
+                                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                    <Label Text="{Binding TotalHours}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="14" Grid.Column="1" LineBreakMode="TailTruncation" Margin="0,5,15,5">
+                                                        <Label.FontSize>
+                                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                    <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="15" Grid.ColumnSpan="2" IsVisible="{Binding IsEdit}"></BoxView>
+                                                    <Grid Grid.Row="16" Grid.ColumnSpan="2" ColumnSpacing="5" Margin="0,5,0,5" IsVisible="{Binding IsEdit}" HorizontalOptions="Center">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <!--<Image Source="edit.png" Grid.Column="0" HorizontalOptions="EndAndExpand">
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer Command="{Binding EditLabor}" CommandParameter="{Binding}"></TapGestureRecognizer>
+                                                            </Image.GestureRecognizers>
+                                                        </Image>
+                                                        <Image Source="repeat.png" Grid.Column="1" Aspect="Fill" HeightRequest="38" WidthRequest="113" HorizontalOptions="FillAndExpand">
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer Command="{Binding Repeat}" CommandParameter="{Binding}"></TapGestureRecognizer>
+                                                            </Image.GestureRecognizers>
+                                                        </Image>
+                                                        <Image Source="delete.png" Grid.Column="1" HorizontalOptions="StartAndExpand">
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer Command="{Binding DeleteLabor}" CommandParameter="{Binding LaborDetailId}"></TapGestureRecognizer>
+                                                            </Image.GestureRecognizers>
+                                                        </Image>-->
+                                                        <Image Source="edit.png" Grid.Column="0" Aspect="Fill" HeightRequest="38" WidthRequest="91" HorizontalOptions="EndAndExpand">
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer Command="{Binding EditLabor}" CommandParameter="{Binding}"></TapGestureRecognizer>
+                                                            </Image.GestureRecognizers>
+                                                        </Image>
+                                                        <Image Source="repeat.png" Grid.Column="1" Aspect="Fill" HeightRequest="38" WidthRequest="113" HorizontalOptions="FillAndExpand">
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer Command="{Binding Repeat}" CommandParameter="{Binding}"></TapGestureRecognizer>
+                                                            </Image.GestureRecognizers>
+                                                        </Image>
+                                                        <Image Source="delete.png" Grid.Column="2" Aspect="Fill" HeightRequest="38" WidthRequest="119" HorizontalOptions="StartAndExpand">
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer Command="{Binding DeleteLabor}" CommandParameter="{Binding LaborDetailId}"></TapGestureRecognizer>
+                                                            </Image.GestureRecognizers>
+                                                        </Image>
+                                                    </Grid>
+                                                </Grid>
+                                            </Frame>
+                                        </StackLayout>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Grid>
+            <Grid IsVisible="{Binding IsEmployeePopup}">
+                <Grid BackgroundColor="Gray" Opacity="0.8" Margin="0,-6,0,0"/>
+                <StackLayout  HorizontalOptions="Center" VerticalOptions="Center">
+                    <Grid Margin="0,5,0,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand"  VerticalOptions="Center"  BackgroundColor="White"  Padding="1">
+                            <StackLayout.Margin>
+                                <OnPlatform x:TypeArguments="Thickness" iOS="15,8,15,8" Android="15,0,15,0" />
+                            </StackLayout.Margin>
+                            <Grid Grid.Row="2"  RowSpacing="2" BackgroundColor="White">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Employee" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="0" Margin="15,15,0,5">
+                                    <Label.FontSize>
+                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                    </Label.FontSize>
+                                </Label>
+                                <AddControl:CustomFrames BackgroundColor="White" OutlineColor="#eae8e8" HasShadow="false" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="0" Grid.Row="0" Grid.Column="1"   Margin="30,5,15,5">
+                                    <Label Text="{Binding SelectedEmpName}" HorizontalTextAlignment="Center" BackgroundColor="White" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="5,7,5,7">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CommandEmpNameEvents}"></TapGestureRecognizer>
+                                        </Label.GestureRecognizers>
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                </AddControl:CustomFrames>
+                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="1" Grid.ColumnSpan="2"></BoxView>
+                                <Label Text="Task"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="2" Grid.Column="0" Margin="15,5,0,5">
+                                    <Label.FontSize>
+                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                    </Label.FontSize>
+                                </Label>
+                                <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="0" Grid.Row="2" Grid.Column="1"   Margin="30,5,15,5">
+                                    <AddControl:CustomPicker  Margin="0,0,5,0" x:Name="pkrTask" Title="Select Task" HorizontalOptions="EndAndExpand" ItemsSource="{Binding TaskLists}" ItemDisplayBinding="{Binding TaskDescription}" SelectedItem="{Binding TaskSelected}" SelectedIndex="{Binding TasksIndex}">
+                                        <AddControl:CustomPicker.Margin>
+                                            <OnPlatform x:TypeArguments="Thickness" iOS="0,0,5,0" Android="0,7,5,7" />
+                                        </AddControl:CustomPicker.Margin>
+                                    </AddControl:CustomPicker>
+                                </AddControl:CustomFrames>
+                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="3" Grid.ColumnSpan="2"></BoxView>
+                                <Grid Grid.Row="4" Grid.ColumnSpan="2" Margin="10,0,10,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="Billable"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="0" Margin="5,5,0,5">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <AddControl:CustomFrames HasShadow="False" OutlineColor="#eae8e8" Grid.Row="0" Grid.Column="1"  HorizontalOptions="Start"  Margin="0,5,0,5" Padding="2">
+                                        <Image Source="{Binding ImgBill}" HorizontalOptions="FillAndExpand" WidthRequest="25" HeightRequest="25">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding CommandImgBillEvents}"></TapGestureRecognizer>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </AddControl:CustomFrames>
+                                    <Label Text="Payroll"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="End" Font="Calibri" Grid.Row="0" Grid.Column="2" Margin="0,5,0,5">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <AddControl:CustomFrames HasShadow="False" OutlineColor="#eae8e8" Grid.Row="0" Grid.Column="3"  HorizontalOptions="Start"  Margin="0,5,0,5" Padding="2">
+                                        <Image Source="{Binding ImgPay}" HorizontalOptions="FillAndExpand" WidthRequest="25" HeightRequest="25">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding CommandImgPayEvents}"></TapGestureRecognizer>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </AddControl:CustomFrames>
+                                    <Label Text="Partner" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="End" Font="Calibri" Grid.Row="0" Grid.Column="4" Margin="0,5,0,5">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <AddControl:CustomFrames HasShadow="False" OutlineColor="#eae8e8" Grid.Row="0" Grid.Column="5"  HorizontalOptions="End"   Margin="0,5,0,5" Padding="2">
+                                        <Image Source="{Binding ImgPar}" HorizontalOptions="FillAndExpand" WidthRequest="25" HeightRequest="25">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding CommandImgParEvents}"></TapGestureRecognizer>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </AddControl:CustomFrames>
+                                </Grid>
+                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="5" Grid.ColumnSpan="2"></BoxView>
+                                <Label Text="Start Time"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="6" Grid.Column="0" Margin="15,5,0,5">
+                                    <Label.FontSize>
+                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                    </Label.FontSize>
+                                </Label>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="End" Grid.Row="6" Grid.Column="1"   Margin="0,5,15,5">
+                                    <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="End" VerticalOptions="StartAndExpand" Padding="0">
+                                        <Entry x:Name="entryStartHours" Text="{Binding StartHours}" WidthRequest="40" Keyboard="Numeric" HorizontalTextAlignment="Center" Placeholder="00" HorizontalOptions="EndAndExpand" Margin="0,-5,0,-5" TextChanged="entryStartHours_TextChanged">
+                                            <Entry.Behaviors>
+                                                <AddControl:EntryLengthValidatorBehavior MaxLength="2"/>
+                                                <AddControl:NumericValidator/>
+                                            </Entry.Behaviors>
+                                        </Entry>
+                                    </AddControl:CustomFrames>
+                                    <Label Text=":" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="3" FontAttributes="Bold"></Label>
+                                    <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="End" VerticalOptions="StartAndExpand" Padding="0" Margin="0,0,5,0">
+                                        <Entry x:Name="entryStartMinute" Text="{Binding StartMinutes}" WidthRequest="40" Keyboard="Numeric" HorizontalTextAlignment="Center" Placeholder="00" HorizontalOptions="EndAndExpand" Margin="0,-5,0,-5" TextChanged="entryStartMinutes_TextChanged">
+                                            <Entry.Behaviors>
+                                                <AddControl:EntryLengthValidatorBehavior MaxLength="2"/>
+                                                <AddControl:NumericValidator/>
+                                            </Entry.Behaviors>
+                                        </Entry>
+                                    </AddControl:CustomFrames>
+                                    <Frame BackgroundColor="#666666" HasShadow="False" Padding="1" CornerRadius="11" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CommandAMorPM}" CommandParameter="0"/>
+                                        </Frame.GestureRecognizers>
+                                        <Frame BackgroundColor="{Binding StartAMImage}" HasShadow="False" Padding="0" CornerRadius="9" WidthRequest="18" HeightRequest="18" HorizontalOptions="Center" VerticalOptions="Center"></Frame>
+                                    </Frame>
+                                    <Label Text="AM" VerticalOptions="Center" Margin="0,0,5,0"></Label>
+                                    <Frame BackgroundColor="#666666" HasShadow="False" Padding="1" CornerRadius="11" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CommandAMorPM}" CommandParameter="1"/>
+                                        </Frame.GestureRecognizers>
+                                        <Frame BackgroundColor="{Binding StartPMImage}" HasShadow="False" Padding="0" CornerRadius="9" WidthRequest="18" HeightRequest="18" HorizontalOptions="Center" VerticalOptions="Center"></Frame>
+                                    </Frame>
+                                    <Label Text="PM" VerticalOptions="Center"></Label>
+                                </StackLayout>
+                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="7" Grid.ColumnSpan="2"></BoxView>
+                                <Label Text="End Time"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="8" Grid.Column="0" Margin="15,5,0,5">
+                                    <Label.FontSize>
+                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                    </Label.FontSize>
+                                </Label>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="End" Grid.Row="8" Grid.Column="1" Margin="0,5,15,5">
+                                    <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="End" VerticalOptions="StartAndExpand" Padding="0">
+                                        <Entry x:Name="entryEndHours" Text="{Binding EndHours}" WidthRequest="40" Keyboard="Numeric" HorizontalTextAlignment="Center" Placeholder="00" HorizontalOptions="EndAndExpand" Margin="0,-5,0,-5" TextChanged="entryEndHours_TextChanged">
+                                            <Entry.Behaviors>
+                                                <AddControl:EntryLengthValidatorBehavior MaxLength="2"/>
+                                                <AddControl:NumericValidator/>
+                                            </Entry.Behaviors>
+                                        </Entry>
+                                    </AddControl:CustomFrames>
+                                    <Label Text=":" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="3" FontAttributes="Bold"></Label>
+                                    <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="End" VerticalOptions="StartAndExpand" Padding="0" Margin="0,0,5,0">
+                                        <Entry x:Name="entryEndMinute" Text="{Binding EndMinutes}" WidthRequest="40" Keyboard="Numeric" HorizontalTextAlignment="Center" Placeholder="00" HorizontalOptions="EndAndExpand" Margin="0,-5,0,-5" TextChanged="entryEndMinute_TextChanged">
+                                            <Entry.Behaviors>
+                                                <AddControl:EntryLengthValidatorBehavior MaxLength="2"/>
+                                                <AddControl:NumericValidator/>
+                                            </Entry.Behaviors>
+                                        </Entry>
+                                    </AddControl:CustomFrames>
+                                    <Frame BackgroundColor="#666666" HasShadow="False" Padding="1" CornerRadius="11" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CommandEndAMorPM}" CommandParameter="0"/>
+                                        </Frame.GestureRecognizers>
+                                        <Frame BackgroundColor="{Binding EndAMImage}" HasShadow="False" Padding="0" CornerRadius="9" WidthRequest="18" HeightRequest="18" HorizontalOptions="Center" VerticalOptions="Center"></Frame>
+                                    </Frame>
+                                    <Label Text="AM" VerticalOptions="Center" Margin="0,0,5,0"></Label>
+                                    <Frame BackgroundColor="#666666" HasShadow="False" Padding="1" CornerRadius="11" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CommandEndAMorPM}" CommandParameter="1"/>
+                                        </Frame.GestureRecognizers>
+                                        <Frame BackgroundColor="{Binding EndPMImage}" HasShadow="False" Padding="0" CornerRadius="9" WidthRequest="18" HeightRequest="18" HorizontalOptions="Center" VerticalOptions="Center"></Frame>
+                                    </Frame>
+                                    <Label Text="PM" VerticalOptions="Center"></Label>
+                                </StackLayout>
+                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="9" Grid.ColumnSpan="2"></BoxView>
+                                <Label Text="Lunch(hrs)" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="10" Grid.Column="0" Margin="15,5,0,5">
+                                    <Label.FontSize>
+                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                    </Label.FontSize>
+                                </Label>
+                                <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" Padding="0" Grid.Row="10" Grid.Column="1"   Margin="20,5,15,5">
+                                    <Entry Text="{Binding LaunchTime}" Keyboard="Numeric" HorizontalTextAlignment="Center" HorizontalOptions="EndAndExpand" WidthRequest="65" Margin="0,-5,0,-5">
+                                        <Entry.Behaviors>
+                                            <AddControl:EntryLengthValidatorBehavior MaxLength="6"/>
+                                        </Entry.Behaviors>
+                                    </Entry>
+                                </AddControl:CustomFrames>
+                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="11" Grid.ColumnSpan="2"></BoxView>
+                                <Grid Grid.Row="12" Grid.ColumnSpan="2" Margin="5,0,5,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="ST" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="0" Margin="10,5,0,5">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="Start" VerticalOptions="StartAndExpand" Padding="0" Grid.Row="0" Grid.Column="1"   Margin="0,5,0,5">
+                                        <Entry Text="{Binding ST}" Unfocused="ST_Unfocused"  Keyboard="Numeric" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" WidthRequest="65" Margin="0,-5,0,-5">
+                                            <Entry.Behaviors>
+                                                <AddControl:EntryLengthValidatorBehavior MaxLength="6"/>
+                                            </Entry.Behaviors>
+                                        </Entry>
+                                    </AddControl:CustomFrames>
+                                    <Label Text="OT" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="End" Font="Calibri" Grid.Row="0" Grid.Column="2" Margin="5,5,0,5">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="Start" VerticalOptions="StartAndExpand" Padding="0" Grid.Row="0" Grid.Column="3"   Margin="0,5,0,5">
+                                        <Entry Text="{Binding OT}" Unfocused="OT_Unfocused"  Keyboard="Numeric" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" WidthRequest="65" Margin="0,-5,0,-5">
+                                            <Entry.Behaviors>
+                                                <AddControl:EntryLengthValidatorBehavior MaxLength="6"/>
+                                            </Entry.Behaviors>
+                                        </Entry>
+                                    </AddControl:CustomFrames>
+                                    <Label Text="DT" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="End" Font="Calibri" Grid.Row="0" Grid.Column="4" Margin="5,5,0,5">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="End" VerticalOptions="StartAndExpand" Padding="0" Grid.Row="0" Grid.Column="5"   Margin="0,5,10,5">
+                                        <Entry Text="{Binding DT}" Unfocused="DT_Unfocused"  Keyboard="Numeric" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" WidthRequest="65" Margin="0,-5,0,-5">
+                                            <Entry.Behaviors>
+                                                <AddControl:EntryLengthValidatorBehavior MaxLength="6"/>
+                                            </Entry.Behaviors>
+                                        </Entry>
+                                    </AddControl:CustomFrames>
+                                </Grid>
+                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="13" Grid.ColumnSpan="2"></BoxView>
+                                <Label Text="Total"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="14" Grid.Column="0" Margin="15,5,0,5">
+                                    <Label.FontSize>
+                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                    </Label.FontSize>
+                                </Label>
+                                <Label Text="{Binding TotalTime}" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="14" Grid.Column="1"  Margin="0,5,15,5">
+                                    <Label.FontSize>
+                                        <OnIdiom x:TypeArguments="x:Double" Phone="16" Tablet="16"/>
+                                    </Label.FontSize>
+                                </Label>
+                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="15" Grid.ColumnSpan="2"></BoxView>
+                                <Grid Grid.Row="16" Grid.ColumnSpan="2" ColumnSpacing="5" Margin="0,8,0,8" IsVisible="{Binding IsEdit}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="add.png" Grid.Column="0" HorizontalOptions="EndAndExpand">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CommandAddNewLaborEvents}" CommandParameter="AddNew"></TapGestureRecognizer>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Image Source="repeat.png" Grid.Column="1" HorizontalOptions="Center">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CommandAddNewLaborEvents}" CommandParameter="Repeat"></TapGestureRecognizer>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Image Source="cancel.png" Grid.Column="2" HorizontalOptions="StartAndExpand">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CommandCancelEvents}" CommandParameter="EditCancel"></TapGestureRecognizer>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Grid>
+                                <Grid Grid.Row="16" Grid.ColumnSpan="2" ColumnSpacing="5" Margin="0,8,0,8" IsVisible="{Binding IsUpdate}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="update.png" Grid.Column="0" HorizontalOptions="EndAndExpand">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CommandAddNewLaborEvents}" CommandParameter="AddNew"></TapGestureRecognizer>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Image Source="cancel.png" Grid.Column="1" HorizontalOptions="StartAndExpand">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CommandCancelEvents}" CommandParameter="UpdateCancel"></TapGestureRecognizer>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Grid>
+                            </Grid>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+            <Grid IsVisible="{Binding IsEmployeeListPopup}">
+                <Grid BackgroundColor="Gray" Opacity="0.8" Margin="0,-6,0,0"/>
+                <Frame CornerRadius="15" HasShadow="False" VerticalOptions="Center"  HeightRequest="300" BackgroundColor="White" Margin="40,0,40,0" Padding="0">
+                <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="Start" BackgroundColor="#d3d3d3" Padding="1">
+                        <StackLayout BackgroundColor="#F8F8FF" VerticalOptions="FillAndExpand">
+                            <Entry Text="{Binding SortText}" HorizontalTextAlignment="Center"  x:Name="entryEmp" VerticalOptions="FillAndExpand" Placeholder="Filter Employee" HorizontalOptions="FillAndExpand" FontSize="14" HeightRequest="38" />
+                        </StackLayout>
+                    </StackLayout>
+                    <ListView x:Name="lstEmployeeName" ItemsSource="{Binding EmpList}" Margin="0,0,0,0" ItemTapped="LstOpenLoans_ItemTapped">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Padding="5,0,0,0" Orientation="Horizontal" HorizontalOptions="Center">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding EmpTabed}" CommandParameter="{Binding}"></TapGestureRecognizer>
+                                        </StackLayout.GestureRecognizers>
+                                        <Label Text="{Binding DisplayName}" YAlign="Center" HorizontalOptions="Center">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18" />
+                                            </Label.FontSize>
+                                        </Label>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Label Text="Cancel" TextColor="#71D64A" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,10,5">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CommandCancelEmpListPopup}"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                </Frame>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="3" x:Name="StkNote" IsVisible="False" Margin="0,-6,0,0">
+            <ScrollView >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="15,15,15,5" Padding="1" Grid.Row="0">
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Label Text="Note" TextColor="#71D64A" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Margin="5,0,0,0">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                </Label.FontSize>
+                            </Label>
+                            <StackLayout Padding="1" BackgroundColor="Gray" Margin="5,5,5,5">
+                                <Editor Text="{Binding EditorNote}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" HeightRequest="300" IsEnabled="{Binding IsFinalSubmitted, Mode=TwoWay}">
+                                    <Editor.FontSize>
+                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18" />
+                                    </Editor.FontSize>
+                                </Editor>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    <Grid Grid.Row="1"  VerticalOptions="End" Margin="15,15,15,15" IsVisible="{Binding IsFinalSubmitted}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="saveall.png" HorizontalOptions="End" Grid.Row="0" Grid.Column="0" VerticalOptions="Center">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CommandSubmittedEvents}" CommandParameter="SaveAll"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image Source="finalreport.png" HorizontalOptions="End" Grid.Row="0" Grid.Column="1" VerticalOptions="Center">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CommandSubmittedEvents}" CommandParameter="FinalSubmitted"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                    <Grid Grid.Row="2"  VerticalOptions="EndAndExpand" Margin="15,20,15,15">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                             <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Prepared By :" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                            </Label.FontSize>
+                        </Label>
+                        <Label Text="{Binding PreparedBy}" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                            </Label.FontSize>
+                        </Label>
+                        <Label Text="Submitted By:" FontAttributes="Bold" Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                            </Label.FontSize>
+                        </Label>
+                        <Label Text="{Binding ReviewedBy}" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                            </Label.FontSize>
+                        </Label>
+                        <Label Text="Final Submitted By:" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                            </Label.FontSize>
+                        </Label>
+                        <Label Text="{Binding SubmittedBy}" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                            </Label.FontSize>
+                        </Label>
+                    </Grid>
+                </Grid>
+            </ScrollView>
+        </Grid>
+        <!--Start Add Material And Equipment-->
+        <Grid Grid.Row="3" x:Name="StkMaterial" IsVisible="False" Margin="0,-5,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackLayout HorizontalOptions="FillAndExpand" Grid.Row="0" Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="15,2,15,0">
+                    <Label Text="Material"  FontAttributes="Bold" FontSize="26" Font="Calibri" TextColor="#666666" HorizontalOptions="StartAndExpand" VerticalOptions="Center">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="16" Tablet="20"/>
+                        </Label.FontSize>
+                    </Label>
+                    <Frame BackgroundColor="#71D64A" HasShadow="False" Padding="0" CornerRadius="16" WidthRequest="32" HeightRequest="32" HorizontalOptions="EndAndExpand"  IsVisible="{Binding IsFinalSubmitted}">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CommandAddMaterialEvents}"></TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+                        <Label Text="+"  TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="16" Tablet="22"/>
+                            </Label.FontSize>
+                        </Label>
+                    </Frame>
+                </StackLayout>
+                <ListView Grid.Row="1"   x:Name="lstMaterial"  HasUnevenRows="True"  ItemsSource="{Binding LstMaterial}" SeparatorVisibility="None" ItemTapped="lstMaterial_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Margin="0,5,0,5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Grid.Row="0">
+                                        <Frame  HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" HasShadow="True" BackgroundColor="White" Margin="15,0,15,0" Padding="1">
+                                            <Frame.Margin>
+                                                <OnPlatform x:TypeArguments="Thickness" iOS="15,8,15,8" Android="15,0,15,0" />
+                                            </Frame.Margin>
+                                            <Grid RowSpacing="0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Label Text="Materials Used" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="0" Margin="15,5,0,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <Label Text="{Binding Material}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="0" Grid.Column="1" Margin="0,5,15,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="1" Grid.ColumnSpan="2"></BoxView>
+                                                <Label Text="Unit Of Measure"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="2" Grid.Column="0" Margin="15,5,0,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <Label Text="{Binding Unit}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="2" Grid.Column="1" LineBreakMode="TailTruncation" Margin="0,5,15,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="3" Grid.ColumnSpan="2"></BoxView>
+                                                <Label Text="Quantity"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="4" Grid.Column="0" Margin="15,5,0,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <Label Text="{Binding Quantity}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="4" Grid.Column="1" LineBreakMode="TailTruncation" Margin="0,5,15,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="5" Grid.ColumnSpan="2"></BoxView>
+                                                <Label Text="Category" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="6" Grid.Column="0" Margin="15,5,0,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <Label Text="{Binding Category}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="6" Grid.Column="1" Margin="0,5,15,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="7" Grid.ColumnSpan="2"></BoxView>
+                                                <Label Text="Pcard"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="8" Grid.Column="0" Margin="15,5,0,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <Image Source="{Binding PCardImge}" Grid.Row="8" Grid.Column="1" Margin="0,5,15,5" HorizontalOptions="End" VerticalOptions="FillAndExpand"></Image>
+                                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="9" Grid.ColumnSpan="2"></BoxView>
+                                                <Label Text="Store Name"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="10" Grid.Column="0" Margin="15,5,0,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <Label Text="{Binding StoreName}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="10" Grid.Column="1" LineBreakMode="TailTruncation" Margin="0,5,15,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="11" Grid.ColumnSpan="2"></BoxView>
+                                                <Label Text="Cost"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="12" Grid.Column="0" Margin="15,5,0,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <Label Text="{Binding Cost}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="12" Grid.Column="1" LineBreakMode="TailTruncation" Margin="0,5,15,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="13" Grid.ColumnSpan="2"></BoxView>
+                                                <Grid Grid.Row="14" Grid.ColumnSpan="2" ColumnSpacing="5" Margin="0,5,0,5" HorizontalOptions="Center" IsVisible="{Binding IsEdit}">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Image Source="edit.png" Grid.Column="0" Aspect="Fill" HeightRequest="38" WidthRequest="91" HorizontalOptions="EndAndExpand">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding EditCommand}" CommandParameter="{Binding}"></TapGestureRecognizer>
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                    <Image Source="delete.png" Grid.Column="2" Aspect="Fill" HeightRequest="38" WidthRequest="119"  HorizontalOptions="StartAndExpand">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding DeleteCommand}" CommandParameter="{Binding MaterialId}"></TapGestureRecognizer>
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                </Grid>
+                                            </Grid>
+                                        </Frame>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Grid.Row="2" VerticalOptions="FillAndExpand" Margin="15,0,15,0">
+                    <Label Text="Equipment"  FontAttributes="Bold" FontSize="26" Font="Calibri" TextColor="#666666" HorizontalOptions="StartAndExpand" VerticalOptions="Center">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="16" Tablet="20"/>
+                        </Label.FontSize>
+                    </Label>
+                    <Frame BackgroundColor="#71D64A" HasShadow="False" Padding="0" CornerRadius="16" WidthRequest="32" HeightRequest="32" HorizontalOptions="EndAndExpand"  IsVisible="{Binding IsFinalSubmitted}">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CommandAddEquipmentEvents}"></TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+                        <Label Text="+"  TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="16" Tablet="22"/>
+                            </Label.FontSize>
+                        </Label>
+                    </Frame>
+                </StackLayout>
+                <ListView Grid.Row="3"  x:Name="lstEquipment"  HasUnevenRows="True"  ItemsSource="{Binding LstEquipment}" SeparatorVisibility="None" ItemTapped="lstMaterial_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Margin="0,5,0,5" RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Grid.Row="0">
+                                        <Frame  HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" HasShadow="True" BackgroundColor="White" Margin="15,0,15,0" Padding="1">
+                                            <Frame.Margin>
+                                                <OnPlatform x:TypeArguments="Thickness" iOS="15,8,15,8" Android="15,0,15,0" />
+                                            </Frame.Margin>
+                                            <Grid RowSpacing="0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Label Text="Equipment" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="0" Margin="15,5,0,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <Label Text="{Binding Equipment}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="0" Grid.Column="1" Margin="0,5,15,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="1" Grid.ColumnSpan="2"></BoxView>
+                                                <Label Text="Unit Of Measure"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="2" Grid.Column="0" Margin="15,5,0,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <Label Text="{Binding Unit}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="2" Grid.Column="1" LineBreakMode="TailTruncation" Margin="0,5,15,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="3" Grid.ColumnSpan="2"></BoxView>
+                                                <Label Text="Quantity"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="4" Grid.Column="0" Margin="15,5,0,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <Label Text="{Binding Quantity}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="4" Grid.Column="1" LineBreakMode="TailTruncation" Margin="0,5,15,5">
+                                                    <Label.FontSize>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                                    </Label.FontSize>
+                                                </Label>
+                                                <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="5" Grid.ColumnSpan="2"></BoxView>
+                                                <Grid Grid.Row="6" Grid.ColumnSpan="2" ColumnSpacing="5" Margin="0,5,0,5" HorizontalOptions="Center" IsVisible="{Binding IsEdit}">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Image Source="edit.png" Grid.Column="0" Aspect="Fill" HeightRequest="38" WidthRequest="91"  HorizontalOptions="EndAndExpand">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding EditCommand}" CommandParameter="{Binding}"></TapGestureRecognizer>
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                    <!--<Image Source="repeat.png" Grid.Column="1" HorizontalOptions="FillAndExpand">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Repeat}" CommandParameter="{Binding}"></TapGestureRecognizer>
+                                                    </Image.GestureRecognizers>
+                                                </Image>-->
+                                                    <Image Source="delete.png" Grid.Column="2" Aspect="Fill" HeightRequest="38" WidthRequest="119"  HorizontalOptions="StartAndExpand">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding DeleteCommand}" CommandParameter="{Binding EquipmentId}"></TapGestureRecognizer>
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                </Grid>
+                                            </Grid>
+                                        </Frame>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <Grid IsVisible="{Binding IsMaterialEquipment}">
+                <Grid BackgroundColor="Gray" Opacity="0.8" Margin="0,-6,0,0"/>
+                <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"  BackgroundColor="Transparent" Margin="10,0,10,0">
+                    <Frame IsVisible="{Binding IsMaterialPopup}" Padding="0" CornerRadius="15" BackgroundColor="White" HasShadow="False">
+                        <Grid  RowSpacing="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Materials Used" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="0" Margin="15,5,0,3">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1"   Margin="0,5,15,3">
+                                <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="0" >
+                                    <AddControl:CustomPicker  Margin="0,0,5,0" x:Name="pkrMaterialUsed" Title="Select Material Used" HorizontalOptions="EndAndExpand" ItemsSource="{Binding MaterialUsed}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding MaterialUsedSelected}" SelectedIndex="{Binding MaterIndex}">
+                                        <AddControl:CustomPicker.Margin>
+                                            <OnPlatform x:TypeArguments="Thickness" iOS="0,0,0,0" Android="0,5,5,5" />
+                                        </AddControl:CustomPicker.Margin>
+                                    </AddControl:CustomPicker>
+                                </AddControl:CustomFrames>
+                                <AddControl:CustomFrames BackgroundColor="White" IsVisible="{Binding IsMaterialType}" HasShadow="false" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="0">
+                                    <Entry Text="{Binding NewMaterial}"  FontSize="14" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"  Margin="0,-5,0,-5">
+                                        <Entry.Behaviors>
+                                            <AddControl:EntryLengthValidatorBehavior MaxLength="100"/>
+                                        </Entry.Behaviors>
+                                    </Entry>
+                                </AddControl:CustomFrames>
+                            </StackLayout>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="1" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Unit Of Measure"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="2" Grid.Column="0" Margin="15,3,0,3">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" Padding="0" Grid.Row="2" Grid.Column="1"   Margin="20,3,15,3">
+                                <Entry Text="{Binding Unit}" FontSize="14" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" WidthRequest="100" Margin="0,-5,0,-5">
+                                    <Entry.Behaviors>
+                                        <AddControl:EntryLengthValidatorBehavior MaxLength="100"/>
+                                    </Entry.Behaviors>
+                                </Entry>
+                            </AddControl:CustomFrames>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="3" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Quantity"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="4" Grid.Column="0" Margin="15,3,0,3">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" Padding="0" Grid.Row="4" Grid.Column="1"   Margin="20,3,15,3">
+                                <Entry Text="{Binding Quantity}" FontSize="14" HorizontalTextAlignment="End" Keyboard="Numeric" HorizontalOptions="EndAndExpand" WidthRequest="100" Margin="0,-5,0,-5">
+                                    <Entry.Behaviors>
+                                        <AddControl:EntryLengthValidatorBehavior MaxLength="6"/>
+                                    </Entry.Behaviors>
+                                </Entry>
+                            </AddControl:CustomFrames>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="5" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Category" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="6" Grid.Column="0" Margin="15,3,0,3">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="{Binding Category}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Font="Calibri" Grid.Row="6" Grid.Column="1" Margin="0,3,15,3">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="7" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Pcard"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="8" Grid.Column="0" Margin="15,3,0,3">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <AddControl:CustomFrames HasShadow="false" Grid.Row="8" Grid.Column="1"  HorizontalOptions="EndAndExpand"  BackgroundColor="#d3d3d3" Margin="0,3,15,3" Padding="2">
+                                <!--<StackLayout Grid.Row="8" Grid.Column="1"  HorizontalOptions="EndAndExpand"  BackgroundColor="#d3d3d3" Margin="0,3,15,3" Padding="2">
+                                <StackLayout HorizontalOptions="EndAndExpand"  BackgroundColor="#F8F8FF">-->
+                                <Image Source="{Binding PcardImage}" HorizontalOptions="EndAndExpand" WidthRequest="25" HeightRequest="25">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CommandCommandPcardEvents}"></TapGestureRecognizer>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <!--</StackLayout>
+                            </StackLayout>-->
+                            </AddControl:CustomFrames>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="9" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Store Name"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="10" Grid.Column="0" Margin="15,3,0,3">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="0" Grid.Row="10" Grid.Column="1"   Margin="20,3,15,3">
+                                <Entry Text="{Binding StoreName}" FontSize="14" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" Margin="0,-5,0,-5">
+                                    <Entry.Behaviors>
+                                        <AddControl:EntryLengthValidatorBehavior MaxLength="100"/>
+                                    </Entry.Behaviors>
+                                </Entry>
+                            </AddControl:CustomFrames>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="11" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Cost"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="12" Grid.Column="0" Margin="15,3,0,3">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" Padding="0" Grid.Row="12" Grid.Column="1"   Margin="20,3,15,3">
+                                <Entry Text="{Binding Cost}" FontSize="14" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" WidthRequest="100" Keyboard="Numeric" Margin="0,-5,0,-5">
+                                    <Entry.Behaviors>
+                                        <AddControl:EntryLengthValidatorBehavior MaxLength="9"/>
+                                    </Entry.Behaviors>
+                                </Entry>
+                            </AddControl:CustomFrames>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="13" Grid.ColumnSpan="2"></BoxView>
+                            <Grid Grid.Row="14" RowSpacing="0" Grid.ColumnSpan="2" ColumnSpacing="5" Margin="0,5,0,5" IsVisible="{Binding IsAddMaterial}" HorizontalOptions="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="add.png" Grid.Column="0" Aspect="Fill" HeightRequest="38" WidthRequest="91" HorizontalOptions="EndAndExpand">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CommandInsertMaterialEvents}" CommandParameter="InsertMaterial"></TapGestureRecognizer>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="repeat.png" Grid.Column="1" Aspect="Fill" HeightRequest="38" WidthRequest="113"  HorizontalOptions="Center">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CommandInsertMaterialEvents}" CommandParameter="Repeat"></TapGestureRecognizer>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="cancel.png" Grid.Column="2" Aspect="Fill" HeightRequest="38" WidthRequest="86"  HorizontalOptions="StartAndExpand">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CommandCancelMaterialEvents}" CommandParameter="EditCancel"></TapGestureRecognizer>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                            <Grid Grid.Row="14" Grid.ColumnSpan="2" ColumnSpacing="5" Margin="0,8,0,8" IsVisible="{Binding IsUpdateMaterial}" HorizontalOptions="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="update.png" Grid.Column="0" Aspect="Fill" HeightRequest="38" WidthRequest="120"  HorizontalOptions="EndAndExpand">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CommandInsertMaterialEvents}" CommandParameter="AddNew"></TapGestureRecognizer>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="cancel.png" Grid.Column="1"  Aspect="Fill" HeightRequest="38" WidthRequest="86" HorizontalOptions="StartAndExpand">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CommandCancelMaterialEvents}" CommandParameter="UpdateCancel"></TapGestureRecognizer>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                        </Grid >
+                    </Frame>
+                    <Frame IsVisible="{Binding IsEquipmentPopup}" Padding="0" CornerRadius="15" BackgroundColor="White" HasShadow="False">
+                        <Grid RowSpacing="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Equipment" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="0" Grid.Column="0" Margin="15,15,0,5">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1"   Margin="0,5,15,5">
+                                <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="0" >
+                                    <AddControl:CustomPicker  Margin="0,0,5,0" x:Name="pkrEquipment" Title="Select Equipment" HorizontalOptions="EndAndExpand" ItemsSource="{Binding EquipmentUsed}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding EquipmentSelected}" SelectedIndex="{Binding EquIndex}">
+                                        <AddControl:CustomPicker.Margin>
+                                            <OnPlatform x:TypeArguments="Thickness" iOS="0,0,0,0" Android="0,7,5,7" />
+                                        </AddControl:CustomPicker.Margin>
+                                    </AddControl:CustomPicker>
+                                </AddControl:CustomFrames>
+                                <AddControl:CustomFrames BackgroundColor="White" IsVisible="{Binding IsEquipmentType}" HasShadow="false" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="0">
+                                    <Entry  Text="{Binding NewEquipment}" FontSize="14" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"  Margin="0,-5,0,-5">
+                                        <Entry.Behaviors>
+                                            <AddControl:EntryLengthValidatorBehavior MaxLength="100"/>
+                                        </Entry.Behaviors>
+                                    </Entry>
+                                </AddControl:CustomFrames>
+                            </StackLayout>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="1" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Unit Of Measure"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="2" Grid.Column="0" Margin="15,5,0,5">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" Padding="0" Grid.Row="2" Grid.Column="1"   Margin="20,5,15,5">
+                                <Entry FontSize="14" Text="{Binding EquUnit}" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" WidthRequest="100" Margin="0,-5,0,-5">
+                                    <Entry.Behaviors>
+                                        <AddControl:EntryLengthValidatorBehavior MaxLength="64"/>
+                                    </Entry.Behaviors>
+                                </Entry>
+                            </AddControl:CustomFrames>
+
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="3" Grid.ColumnSpan="2"></BoxView>
+                            <Label Text="Quantity"  FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Start" Font="Calibri" Grid.Row="4" Grid.Column="0" Margin="15,5,0,5">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <AddControl:CustomFrames BackgroundColor="White" HasShadow="false" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" Padding="0" Grid.Row="4" Grid.Column="1"   Margin="20,5,15,5">
+                                <Entry FontSize="14" Text="{Binding EquQuantity}" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" WidthRequest="100" Keyboard="Numeric" Margin="0,-5,0,-5">
+                                    <Entry.Behaviors>
+                                        <AddControl:EntryLengthValidatorBehavior MaxLength="6"/>
+                                    </Entry.Behaviors>
+                                </Entry>
+                            </AddControl:CustomFrames>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="5" Grid.ColumnSpan="2"></BoxView>
+                            <Grid Grid.Row="6" Grid.ColumnSpan="2" ColumnSpacing="5" Margin="0,8,0,8" IsVisible="{Binding IsAddEquipment}" HorizontalOptions="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="add.png" Grid.Column="0" Aspect="Fill" HeightRequest="38" WidthRequest="91"  HorizontalOptions="EndAndExpand">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CommandInsertEquipmentEvents}" CommandParameter="AddNew"></TapGestureRecognizer>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="repeat.png" Grid.Column="1" Aspect="Fill" HeightRequest="38" WidthRequest="113" HorizontalOptions="Center">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CommandInsertEquipmentEvents}" CommandParameter="Repeat"></TapGestureRecognizer>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="cancel.png" Grid.Column="2" Aspect="Fill" HeightRequest="38" WidthRequest="86" HorizontalOptions="StartAndExpand">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CommandCancelMaterialEvents}" CommandParameter="EditCancel"></TapGestureRecognizer>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                            <Grid Grid.Row="6" Grid.ColumnSpan="2" ColumnSpacing="5" Margin="0,8,0,8" IsVisible="{Binding IsUpdateEquipment}" HorizontalOptions="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="update.png" Grid.Column="0" Aspect="Fill" HeightRequest="38" WidthRequest="124" HorizontalOptions="EndAndExpand">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CommandInsertEquipmentEvents}" CommandParameter="AddNew"></TapGestureRecognizer>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="cancel.png" Grid.Column="1" Aspect="Fill" HeightRequest="38" WidthRequest="86" HorizontalOptions="StartAndExpand">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CommandCancelMaterialEvents}" CommandParameter="UpdateCancel"></TapGestureRecognizer>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+
+        </Grid>
+        <!--End Add Material And Equipment-->
+    </Grid>
+</ContentPage>

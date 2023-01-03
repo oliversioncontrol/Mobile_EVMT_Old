@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OnLocationEVMT.Views.EmpTagView">
+  <ContentView.Content>
+        <!--<ListView Margin="0,0,0,0" x:Name="lstviewEmpTo"  HasUnevenRows="True" HeightRequest="200"  BackgroundColor="Gray"   SeparatorVisibility="None" ItemTapped="lstEmpTo_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>-->                       
+                                <Frame Grid.Row="0"  WidthRequest="76" Padding="5" BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20,20,0,20">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                                        <Image x:Name="img"  HeightRequest="69" WidthRequest="69" HorizontalOptions="Center" VerticalOptions="Start"></Image>
+                                        <Label x:Name="lbl" LineBreakMode="WordWrap" HorizontalTextAlignment="Center"  HorizontalOptions="Center" VerticalOptions="Center">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18"/>
+                                            </Label.FontSize>
+                                        </Label>
+                                    </StackLayout>
+                                </Frame>                          
+                    <!--</ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+    </ContentView.Content>
+</ContentView>

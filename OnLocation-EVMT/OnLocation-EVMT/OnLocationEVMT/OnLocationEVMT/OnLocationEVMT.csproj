@@ -1,0 +1,635 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62C7AD49-E918-4594-8D07-F1E822037B6C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OnLocationEVMT</RootNamespace>
+    <AssemblyName>OnLocationEVMT</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AllResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomFrames.cs" />
+    <Compile Include="Controls\CustomPicker.cs" />
+    <Compile Include="Controls\EntryLengthValidatorBehavior.cs" />
+    <Compile Include="Controls\Loader.cs" />
+    <Compile Include="Controls\NumericValidator.cs" />
+    <Compile Include="Controls\PkrRenderWithoutLine.cs" />
+    <Compile Include="Controls\ScreenHeightWidth.cs" />
+    <Compile Include="DependencyServices\IAndroidPermission.cs" />
+    <Compile Include="DependencyServices\ICheckEmail.cs" />
+    <Compile Include="DependencyServices\IDeviceOrientation.cs" />
+    <Compile Include="DependencyServices\IDocumentManager.cs" />
+    <Compile Include="DependencyServices\IDownloadService.cs" />
+    <Compile Include="DependencyServices\ILoginServices.cs" />
+    <Compile Include="DependencyServices\IProgressInterface.cs" />
+    <Compile Include="DependencyServices\ISaveAndLoad.cs" />
+    <Compile Include="DependencyServices\IScreenshotManager.cs" />
+    <Compile Include="Helpers\ByteArrayToImageSourceConverter.cs" />
+    <Compile Include="Helpers\GrantAndroidPermission.cs" />
+    <Compile Include="Helpers\IsConneciton.cs" />
+    <Compile Include="Helpers\ObservableObject.cs" />
+    <Compile Include="Helpers\ObservableRangeCollection.cs" />
+    <Compile Include="Helpers\PhotoHelper.cs" />
+    <Compile Include="Helpers\StreamHelper.cs" />
+    <Compile Include="Helpers\String2PriceConverter.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ActiveMenu.cs" />
+    <Compile Include="Models\BoothCardModel.cs" />
+    <Compile Include="Models\BoothCardResponse.cs" />
+    <Compile Include="Models\BoothHeader.cs" />
+    <Compile Include="Models\City.cs" />
+    <Compile Include="Models\EmpAccoladesModel.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\EquipmentModel.cs" />
+    <Compile Include="Models\GroupNewPostModel.cs" />
+    <Compile Include="Models\GroupSeed.cs" />
+    <Compile Include="Models\Industry.cs" />
+    <Compile Include="Models\InstEquipment.cs" />
+    <Compile Include="Models\InstMaterialModel.cs" />
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\InvoicePDFModel.cs" />
+    <Compile Include="Models\JobStaffModel.cs" />
+    <Compile Include="Models\JobStaffResponse.cs" />
+    <Compile Include="Models\KeyContactModel.cs" />
+    <Compile Include="Models\KeyContactResponse.cs" />
+    <Compile Include="Models\LaborCallModels.cs" />
+    <Compile Include="Models\LaborDetailModel.cs" />
+    <Compile Include="Models\LaborInsertUpdateModel.cs" />
+    <Compile Include="Models\LaborInstall.cs" />
+    <Compile Include="Models\MaterialExtras.cs" />
+    <Compile Include="Models\MaterialModel.cs" />
+    <Compile Include="Models\MaterialUsed.cs" />
+    <Compile Include="Models\MonthModel.cs" />
+    <Compile Include="Models\NewAndEvents.cs" />
+    <Compile Include="Models\NewBooth.cs" />
+    <Compile Include="Models\ODSample.cs" />
+    <Compile Include="Models\ODSampleResponse.cs" />
+    <Compile Include="Models\OrderInfoModel.cs" />
+    <Compile Include="Models\PicImage.cs" />
+    <Compile Include="Models\Portfolio.cs" />
+    <Compile Include="Models\ProjectEstimate.cs" />
+    <Compile Include="Models\ProjectPic.cs" />
+    <Compile Include="Models\ShippingModel.cs" />
+    <Compile Include="Models\ShowInfoResponse.cs" />
+    <Compile Include="Models\SignRequestModel.cs" />
+    <Compile Include="Models\SignResponseModel.cs" />
+    <Compile Include="Models\SupervisionModel.cs" />
+    <Compile Include="Models\Tasks.cs" />
+    <Compile Include="Models\TradeShowModel.cs" />
+    <Compile Include="Models\UpdateHeaderRequest.cs" />
+    <Compile Include="Models\UserAccounts.cs" />
+    <Compile Include="Models\UserType.cs" />
+    <Compile Include="Models\YourProjectListModel.cs" />
+    <Compile Include="Models\YourProjectListResponse.cs" />
+    <Compile Include="Models\YourTeamModel.cs" />
+    <Compile Include="Models\YourTeamResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\ActiveMenuServices.cs" />
+    <Compile Include="Services\BoothcardServices.cs" />
+    <Compile Include="Services\BoothReportServices.cs" />
+    <Compile Include="Services\BTCHeaderService.cs" />
+    <Compile Include="Services\DeleteEquipmentServices.cs" />
+    <Compile Include="Services\DeleteMaterialService.cs" />
+    <Compile Include="Services\EmployeeAccoladesService.cs" />
+    <Compile Include="Services\EmployeeServices.cs" />
+    <Compile Include="Services\EquipmentAndMaterial.cs" />
+    <Compile Include="Services\EquipmentByJob.cs" />
+    <Compile Include="Services\EquipmentServices.cs" />
+    <Compile Include="Services\EstimatedServices.cs" />
+    <Compile Include="Services\InsertBoothcardHeader.cs" />
+    <Compile Include="Services\InsertEquipmentService.cs" />
+    <Compile Include="Services\InsertMaterialService.cs" />
+    <Compile Include="Services\InvoicesPDFServices.cs" />
+    <Compile Include="Services\InvoicesServices.cs" />
+    <Compile Include="Services\IsMgrORLeadManServices.cs" />
+    <Compile Include="Services\KeyContactServices.cs" />
+    <Compile Include="Services\LaborCallNoteServices.cs" />
+    <Compile Include="Services\LaborDetailsByJob.cs" />
+    <Compile Include="Services\LaborDetailServices.cs" />
+    <Compile Include="Services\LaborInsertUpdateServices.cs" />
+    <Compile Include="Services\LaborInstallServices.cs" />
+    <Compile Include="Services\MaterialByJob.cs" />
+    <Compile Include="Services\MaterialExtrasServices.cs" />
+    <Compile Include="Services\MaterialServices.cs" />
+    <Compile Include="Services\NewsEventsServices.cs" />
+    <Compile Include="Services\ODSampleServices.cs" />
+    <Compile Include="Services\OrderInfoServices.cs" />
+    <Compile Include="Services\OrderSupervisonServices.cs" />
+    <Compile Include="Services\PortfolioServices.cs" />
+    <Compile Include="Services\ProjectYearServices.cs" />
+    <Compile Include="Services\ShippingServices.cs" />
+    <Compile Include="Services\ShowInfoServices.cs" />
+    <Compile Include="Services\ShowServices.cs" />
+    <Compile Include="Services\SignatureServices.cs" />
+    <Compile Include="Services\StaffServices.cs" />
+    <Compile Include="Services\TaskServices.cs" />
+    <Compile Include="Services\ToDoServices.cs" />
+    <Compile Include="Services\UpdateBoothHeaderData.cs" />
+    <Compile Include="Services\UserNotifyServices.cs" />
+    <Compile Include="Services\UserTypeServices.cs" />
+    <Compile Include="Services\YourProjectListServices.cs" />
+    <Compile Include="Services\YourTeamServices.cs" />
+    <Compile Include="ViewModel\BoothCardDetailVM.cs" />
+    <Compile Include="ViewModel\BoothcardSignVM.cs" />
+    <Compile Include="ViewModel\BoothCardVM.cs" />
+    <Compile Include="ViewModel\BoothReportVM.cs" />
+    <Compile Include="ViewModel\CityGuidVM.cs" />
+    <Compile Include="ViewModel\CreateNewBoothVM.cs" />
+    <Compile Include="ViewModel\EmpAccoladesVM.cs" />
+    <Compile Include="ViewModel\EmpDetailsVM.cs" />
+    <Compile Include="ViewModel\EmployeeAccolVMiOS.cs" />
+    <Compile Include="ViewModel\EstimateDetailsVM.cs" />
+    <Compile Include="ViewModel\HomeVm.cs" />
+    <Compile Include="ViewModel\JobStaffVM.cs" />
+    <Compile Include="ViewModel\KeyContactVM.cs" />
+    <Compile Include="ViewModel\LaborCallNotesVM.cs" />
+    <Compile Include="ViewModel\LoginVM.cs" />
+    <Compile Include="ViewModel\NewAndEventsVM.cs" />
+    <Compile Include="ViewModel\NewsReadMoreVM.cs" />
+    <Compile Include="ViewModel\ODSampleNotesVM.cs" />
+    <Compile Include="ViewModel\ODSupervisionVM.cs" />
+    <Compile Include="ViewModel\OrderDetailsVM.cs" />
+    <Compile Include="ViewModel\OverViewVM.cs" />
+    <Compile Include="ViewModel\ProjectEstimateVM.cs" />
+    <Compile Include="ViewModel\ProjectInvoiceVM.cs" />
+    <Compile Include="ViewModel\ResourceVM.cs" />
+    <Compile Include="ViewModel\ShippingNotesVM.cs" />
+    <Compile Include="ViewModel\ShippingVM.cs" />
+    <Compile Include="ViewModel\ShowInfoVM.cs" />
+    <Compile Include="ViewModel\ToDoVM.cs" />
+    <Compile Include="ViewModel\TradeShowUrlVM.cs" />
+    <Compile Include="ViewModel\TradeShowVM.cs" />
+    <Compile Include="ViewModel\YourPicVM.cs" />
+    <Compile Include="ViewModel\YourProjectListVM.cs" />
+    <Compile Include="ViewModel\YourProjectTabVM.cs" />
+    <Compile Include="ViewModel\YourTeamVM.cs" />
+    <Compile Include="Views\BoothCardDetails.xaml.cs">
+      <DependentUpon>BoothCardDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BoothcardReport.xaml.cs">
+      <DependentUpon>BoothcardReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BoothCards.xaml.cs">
+      <DependentUpon>BoothCards.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BoothcardSign.xaml.cs">
+      <DependentUpon>BoothcardSign.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CityGuide.xaml.cs">
+      <DependentUpon>CityGuide.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateNewBooth.xaml.cs">
+      <DependentUpon>CreateNewBooth.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmpAccolades.xaml.cs">
+      <DependentUpon>EmpAccolades.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmpDetails.xaml.cs">
+      <DependentUpon>EmpDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeAccoladesiOS.xaml.cs">
+      <DependentUpon>EmployeeAccoladesiOS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmpTagView.xaml.cs">
+      <DependentUpon>EmpTagView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmpTagViewiOS.xaml.cs">
+      <DependentUpon>EmpTagViewiOS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EstimateDetails.xaml.cs">
+      <DependentUpon>EstimateDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JobStaff.xaml.cs">
+      <DependentUpon>JobStaff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KeyContact.xaml.cs">
+      <DependentUpon>KeyContact.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LaborCallNotes.xaml.cs">
+      <DependentUpon>LaborCallNotes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewsAndEvents.xaml.cs">
+      <DependentUpon>NewsAndEvents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewsReadMore.xaml.cs">
+      <DependentUpon>NewsReadMore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ODSampleAndNote.xaml.cs">
+      <DependentUpon>ODSampleAndNote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrderDatails.xaml.cs">
+      <DependentUpon>OrderDatails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrderDetailSupervision.xaml.cs">
+      <DependentUpon>OrderDetailSupervision.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OverviewTemplae.xaml.cs">
+      <DependentUpon>OverviewTemplae.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProjectEstimate.xaml.cs">
+      <DependentUpon>ProjectEstimate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProjectImage.xaml.cs">
+      <DependentUpon>ProjectImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProjectInvoice.xaml.cs">
+      <DependentUpon>ProjectInvoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProjectOverview.xaml.cs">
+      <DependentUpon>ProjectOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Resource.xaml.cs">
+      <DependentUpon>Resource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shipping.xaml.cs">
+      <DependentUpon>Shipping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShippingNotes.xaml.cs">
+      <DependentUpon>ShippingNotes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowInformation.xaml.cs">
+      <DependentUpon>ShowInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\test.xaml.cs">
+      <DependentUpon>test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToDoNotes.xaml.cs">
+      <DependentUpon>ToDoNotes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TradeShow.xaml.cs">
+      <DependentUpon>TradeShow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TradeShowURL.xaml.cs">
+      <DependentUpon>TradeShowURL.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\YourPic.xaml.cs">
+      <DependentUpon>YourPic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\YourProjectList.xaml.cs">
+      <DependentUpon>YourProjectList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\YourProjectTab.xaml.cs">
+      <DependentUpon>YourProjectTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\YourTeam.xaml.cs">
+      <DependentUpon>YourTeam.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AllResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AllResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\modernhttpclient.2.4.2\lib\Portable-Net45+WinRT45+WP8+WPA81\ModernHttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Connectivity.3.1.1\lib\netstandard1.0\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Connectivity.3.1.1\lib\netstandard1.0\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media, Version=3.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Media.3.1.3\lib\netstandard1.0\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media.Abstractions, Version=3.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Media.3.1.3\lib\netstandard1.0\Plugin.Media.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="SignaturePad.Forms, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Controls.SignaturePad.Forms.2.3.0\lib\portable-net45+win+wp8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SignaturePad.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.5.0.280555\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.5.0.280555\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.5.0.280555\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLLs\Newtonsoft.Json.dll" />
+    <Content Include="DLLs\System.Net.Http.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewsAndEvents.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Resource.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Home.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\YourTeam.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\YourPic.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\CityGuide.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TradeShow.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\KeyContact.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\BoothCards.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\NewsReadMore.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Login.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\YourProjectTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\YourProjectList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ShowInformation.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ProjectEstimate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TradeShowURL.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\EstimateDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\OrderDatails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ODSampleAndNote.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\OrderDetailSupervision.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\JobStaff.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Shipping.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\LaborCallNotes.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ProjectImage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ShippingNotes.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ToDoNotes.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\BoothCardDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\CreateNewBooth.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\BoothcardSign.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ProjectOverview.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\BoothcardReport.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ProjectInvoice.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\EmpDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\test.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\OverviewTemplae.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\EmpAccolades.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\EmpTagView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\EmployeeAccoladesiOS.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\EmpTagViewiOS.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.5.0.280555\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.5.0.280555\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.5.0.280555\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.5.0.280555\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets'))" />
+  </Target>
+</Project>

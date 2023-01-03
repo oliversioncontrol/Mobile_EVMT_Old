@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OnLocationEVMT.Views.OverviewTemplae">
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0" BackgroundColor="#71D64A" Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+            <Label x:Name="lbldate" HorizontalOptions="Start" TextColor="White" VerticalOptions="Center" Margin="15,0,0,0">
+                <Label.FontSize>
+                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                </Label.FontSize>
+            </Label>
+            <Label x:Name="lblday" HorizontalOptions="Start" TextColor="White" VerticalOptions="Center" Margin="15,0,0,0">
+                <Label.FontSize>
+                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                </Label.FontSize>
+            </Label>
+            <Image x:Name="img" Source="colapse.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="0,0,15,0">
+                <Image.WidthRequest>
+                    <OnIdiom x:TypeArguments="x:Double" Phone="30" Tablet="40"/>
+                </Image.WidthRequest>
+                <Image.HeightRequest>
+                    <OnIdiom x:TypeArguments="x:Double" Phone="30" Tablet="40"/>
+                </Image.HeightRequest>
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+        <ScrollView Grid.Row="1" Orientation="Horizontal" >
+            <StackLayout Orientation="Vertical">
+                <ListView IsVisible="False"   Margin="0,0,0,0" RowHeight="42" BackgroundColor="#F8F8FF"   x:Name="LstLaborDetails"  WidthRequest="1275"  HasUnevenRows="True"  SeparatorVisibility="None" ItemTapped="LstLaborDetails_ItemTapped">
+                    <!--<ListView.Header>
+                <Grid Margin="5,0,5,0" RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20"/>                        
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Employee" Grid.Row="1" Grid.Column="0"  FontSize="12" HorizontalOptions="Start" VerticalOptions="Center" Margin="2,0,0,0"></Label>
+                    <Label Text="Task" Grid.Row="1" Grid.Column="1"   FontSize="12" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                    <Label Text="Boothcard" Grid.Row="1" Grid.Column="2"   FontSize="12" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                    <Label Text="Total" Grid.Row="1" Grid.Column="3"   FontSize="12" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,2,0"></Label>
+                    <BoxView Grid.Row="2" Grid.ColumnSpan="5" HeightRequest="1" BackgroundColor="#eae8e8" ></BoxView>
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="0,5,0,5" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <StackLayout  Grid.Row="0">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Repeat}" CommandParameter="{Binding}"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <Grid Margin="5,0,5,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="20"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding EmployeeName}" Grid.Row="1" Grid.Column="0"   FontSize="12" HorizontalOptions="Start" VerticalOptions="Center" Margin="2,0,0,0"></Label>
+                                    <Label Text="{Binding StartTime}" Grid.Row="1" Grid.Column="1"  FontSize="12" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                                    <Label Text="{Binding EndTime}" Grid.Row="1" Grid.Column="2"   FontSize="12" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                                    <Label Text="{Binding TotalHours}" Grid.Row="1" Grid.Column="3"  FontSize="12" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,2,0"></Label>
+                                    <Image Grid.Row="1" Grid.Column="4" Source="arrowright.png" VerticalOptions="CenterAndExpand" HorizontalOptions="End"></Image>
+                                    <BoxView Grid.Row="2" Grid.ColumnSpan="5" HeightRequest="1" BackgroundColor="#eae8e8" ></BoxView>
+                                </Grid>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>-->
+
+                    <ListView.Header>
+                        <Grid RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="175"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Name"  VerticalOptions="Center" HorizontalOptions="Start" FontAttributes="Bold"  Grid.Row="0" Grid.Column="0" Margin="5,0,0,0">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="Task"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="1">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="Boothcard"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="2">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="Start Time"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="3">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="End Time"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="4">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="Lunch(hrs)"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="5">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="ST"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="6">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="OT"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="7">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="DT"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="8">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Label Text="Total"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="9">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                </Label.FontSize>
+                            </Label>
+                            <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="1" Grid.ColumnSpan="10"></BoxView>
+                        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Margin="0,0,0,0" RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="200"/>
+                                        <ColumnDefinition Width="175"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding EmployeeName}" Font="Calibri" VerticalOptions="Center" HorizontalOptions="Start"   Grid.Row="0" Grid.Column="0" Margin="5,0,0,0">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label Text="{Binding TaskDescription}" Font="Calibri"  VerticalOptions="Center" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="1">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <StackLayout Orientation="Vertical" VerticalOptions="Center" Grid.Row="0" Grid.Column="2">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Repeat}" CommandParameter="{Binding BoothcardId}"/>
+                                        </StackLayout.GestureRecognizers>
+                                        <Label Text="{Binding BoothcardId}" Font="Calibri"  VerticalOptions="Center" HorizontalOptions="Center">                                       
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                        </Label.FontSize>                                            
+                                    </Label>
+                                        <BoxView HeightRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="Start" BackgroundColor="#71D64A" Margin="20,0,20,0"></BoxView>
+                                    </StackLayout>
+                                    <Label Text="{Binding StartTime}" Font="Calibri"  VerticalOptions="Center" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="3">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label Text="{Binding EndTime}" Font="Calibri" VerticalOptions="Center" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="4">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label Text="{Binding LunchTime}" Font="Calibri"  VerticalOptions="Center" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="5">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label Text="{Binding ST}" Font="Calibri" VerticalOptions="Center" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="6">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label Text="{Binding OT}" Font="Calibri" VerticalOptions="Center" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="7">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label Text="{Binding DT}" Font="Calibri" VerticalOptions="Center" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="8">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label Text="{Binding TotalHours}" Font="Calibri" VerticalOptions="Center" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="9">
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <BoxView HeightRequest="1" BackgroundColor="#eae8e8" Grid.Row="1" Grid.ColumnSpan="10"></BoxView>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <!--<ListView.Footer>
+                    <Grid Margin="5,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="38"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="175"/>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <BoxView HeightRequest="1" BackgroundColor="Black" Grid.Row="0" Grid.ColumnSpan="10"></BoxView>
+                        <Label Text="Total"  VerticalOptions="Center" HorizontalOptions="Start" FontAttributes="Bold"  Grid.Row="1" Grid.Column="0" Margin="5,0,0,0">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                            </Label.FontSize>
+                        </Label>
+                        <Label Text="{Binding TotalDT}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="1">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                            </Label.FontSize>
+                        </Label>
+                        <Label Text="{Binding TotalDT}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="2">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                            </Label.FontSize>
+                        </Label>
+                        <Label Text="{Binding TotalDT}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="3">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                            </Label.FontSize>
+                        </Label>
+                        <Label Text="{Binding LaunchTime}"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="4">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                            </Label.FontSize>
+                        </Label>
+                        <Label Text="{Binding TotalST}"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="5">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                            </Label.FontSize>
+                        </Label>
+                        <Label Text="{Binding TotalOT}"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="6">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                            </Label.FontSize>
+                        </Label>
+                        <Label Text="{Binding TotalDT}"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="7">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                            </Label.FontSize>
+                        </Label>
+                        <Label Text="{Binding TotalTime}" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="8">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                            </Label.FontSize>
+                        </Label>
+                    </Grid>
+                </ListView.Footer>-->
+                </ListView>
+                <Grid IsVisible="False" x:Name="grdtotal" Margin="0,-5,0,0" WidthRequest="1200" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="38"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="175"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    <!--<BoxView HeightRequest="1" BackgroundColor="Black" Grid.Row="0" Grid.ColumnSpan="10"></BoxView>-->
+                    <Label Text="Total"  VerticalOptions="Center" HorizontalOptions="Start" FontAttributes="Bold"  Grid.Row="1" Grid.Column="0" Margin="5,0,0,0">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                        </Label.FontSize>
+                    </Label>
+                    <Label TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="1">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                        </Label.FontSize>
+                    </Label>
+                    <Label  TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="2">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                        </Label.FontSize>
+                    </Label>
+                    <Label  TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="3">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                        </Label.FontSize>
+                    </Label>
+                    <Label  TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="4">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                        </Label.FontSize>
+                    </Label>
+                    <Label x:Name="lbllaunchtime"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="5">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                        </Label.FontSize>
+                    </Label>
+                    <Label x:Name="lbltotalst"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="6">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                        </Label.FontSize>
+                    </Label>
+                    <Label x:Name="lbltotalot"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="7">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                        </Label.FontSize>
+                    </Label>
+                    <Label x:Name="lbltotaldt"  VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="8">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                        </Label.FontSize>
+                    </Label>
+                    <Label x:Name="lbltotaltime" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="9">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="16"/>
+                        </Label.FontSize>
+                    </Label>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+        <StackLayout x:Name="lblNote" Grid.Row="2" Orientation="Vertical" IsVisible="False" Margin="5,0,0,0">
+        <Label x:Name="lblnotes" Text="Note" FontSize="16"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CommandNoteEvents}" CommandParameter="{Binding Note}"></TapGestureRecognizer>
+                </Label.GestureRecognizers>    
+            <Label.FontSize>
+                    <OnIdiom x:TypeArguments="x:Double" Phone="18" Tablet="22"/>
+                </Label.FontSize>
+            </Label>
+            <BoxView x:Name="boxview" HeightRequest="2" WidthRequest="50" BackgroundColor="#71D64A" HorizontalOptions="Start" VerticalOptions="Start" Margin="0,-3,0,0"></BoxView>
+        </StackLayout>
+    </Grid>
+</ContentView>

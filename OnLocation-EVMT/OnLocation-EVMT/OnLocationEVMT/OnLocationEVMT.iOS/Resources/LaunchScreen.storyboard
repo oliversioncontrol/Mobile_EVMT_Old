@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="X5k-f2-b5h" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="gAE-YM-kbH">
+            <objects>
+                <viewController id="X5k-f2-b5h" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="223"/>
+                        <viewControllerLayoutGuide type="bottom" id="224"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yd7-JS-zBw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="splash.png" id="23" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <constraints>
+                                    <constraint id="426" firstItem="23" firstAttribute="height" constant="568"/>
+                                    <constraint id="427" firstItem="23" firstAttribute="width" constant="320"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint id="225" firstItem="23" firstAttribute="top" secondItem="yd7-JS-zBw" secondAttribute="top"/>
+                            <constraint id="423" firstItem="23" firstAttribute="trailing" secondItem="yd7-JS-zBw" secondAttribute="trailingMargin" constant="16"/>
+                            <constraint id="424" firstItem="yd7-JS-zBw" firstAttribute="leadingMargin" secondItem="23" secondAttribute="leading" constant="16"/>
+                            <constraint id="425" firstItem="23" firstAttribute="bottom" secondItem="yd7-JS-zBw" secondAttribute="bottom"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAI-xm-WK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="349" y="339"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon-60.png" width="60" height="60"/>
+        <image name="Icon-76.png" width="76" height="76"/>
+        <image name="Icon-Small-40.png" width="40" height="40"/>
+        <image name="Icon-Small.png" width="29" height="29"/>
+        <image name="logo.png" width="70" height="70"/>
+        <image name="logo40.png" width="40" height="40"/>
+        <image name="logo80.png" width="80" height="80"/>
+        <image name="back.png" width="23" height="38"/>
+        <image name="Onboothcard.png" width="96" height="96"/>
+        <image name="Onlogo.png" width="120" height="100"/>
+        <image name="yourpic.png" width="60" height="60"/>
+        <image name="yourproject.png" width="60" height="60"/>
+        <image name="yourresource.png" width="60" height="60"/>
+        <image name="yourteam.png" width="60" height="60"/>
+        <image name="splash.png" width="320" height="480"/>
+        <image name="backarrowsmall.png" width="17" height="28"/>
+        <image name="ChicagoCover.png" width="600" height="350"/>
+        <image name="city.png" width="40" height="40"/>
+        <image name="key.png" width="40" height="40"/>
+        <image name="LasVegasCover.png" width="600" height="350"/>
+        <image name="logo58.png" width="58" height="58"/>
+        <image name="logohome.png" width="80" height="80"/>
+        <image name="news.png" width="40" height="40"/>
+        <image name="OrlandoCover.png" width="600" height="350"/>
+        <image name="PhiladelphiaCover.png" width="600" height="350"/>
+        <image name="trade.png" width="40" height="40"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

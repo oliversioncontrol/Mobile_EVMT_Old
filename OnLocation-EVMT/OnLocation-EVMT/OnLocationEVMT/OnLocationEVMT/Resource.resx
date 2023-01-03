@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Alert" xml:space="preserve">
+    <value>Alert</value>
+  </data>
+  <data name="BlankDate" xml:space="preserve">
+    <value>01/01/1900</value>
+  </data>
+  <data name="ColorCode" xml:space="preserve">
+    <value>#72D54A</value>
+  </data>
+  <data name="Invalid" xml:space="preserve">
+    <value>Invalid</value>
+  </data>
+  <data name="InvalidUser" xml:space="preserve">
+    <value>Invalid credentials. Please try again.</value>
+  </data>
+  <data name="MethodGetpProject" xml:space="preserve">
+    <value>GetYourProjectList</value>
+  </data>
+  <data name="MethodGetYourTeam" xml:space="preserve">
+    <value>GetYourProjectTeam</value>
+  </data>
+  <data name="NameAndPassword" xml:space="preserve">
+    <value>Please enter username and password.</value>
+  </data>
+  <data name="NetworkAlert" xml:space="preserve">
+    <value>Network Error</value>
+  </data>
+  <data name="NetworkError" xml:space="preserve">
+    <value>Check Connectivity, Internet might not be connected.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="PageTypeBoothCards" xml:space="preserve">
+    <value>BoothCards</value>
+  </data>
+  <data name="PageTypePic" xml:space="preserve">
+    <value>Pic</value>
+  </data>
+  <data name="PageTypeProject" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="PageTypeTeam" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="Permission" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
+  <data name="PermissionMessgae" xml:space="preserve">
+    <value>OnLocation need storage permission.</value>
+  </data>
+  <data name="PermissionsRequired" xml:space="preserve">
+    <value>Permissions Required.</value>
+  </data>
+  <data name="ProcessingRequest" xml:space="preserve">
+    <value>An error occured while processing your request. Please try again.</value>
+  </data>
+  <data name="RequestError" xml:space="preserve">
+    <value>Error while retreiving data from server. Please try again.</value>
+  </data>
+  <data name="ServiceURL" xml:space="preserve">
+    <value>https://mstage.onlocationind.com/sites/services/_vti_bin/OliMobile/OliService.svc/</value>
+  </data>
+  <data name="TradeShowURL" xml:space="preserve">
+    <value>https://thetradeshowcalendar.com/onlocation_m/index.php?BNR=&amp;vCtry=United+States</value>
+    <comment>http://exhibition-directory.c14.ixsecure.com/onlocation_m/index.php</comment>
+  </data>
+  <data name="NoRecord" xml:space="preserve">
+    <value>No Record Found.</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="Blue" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="Minus" xml:space="preserve">
+    <value>Minus</value>
+  </data>
+  <data name="Plus" xml:space="preserve">
+    <value>Plus</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="PDFName" xml:space="preserve">
+    <value>BoothcardSummary.pdf</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Record Save Successfully.</value>
+  </data>
+  <data name="SignMessage" xml:space="preserve">
+    <value>Please Signature here.</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>AddNew</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="checkImage" xml:space="preserve">
+    <value>check.png</value>
+  </data>
+  <data name="ConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want delete this?</value>
+  </data>
+  <data name="DateFormat" xml:space="preserve">
+    <value>MM/dd/yyyy</value>
+  </data>
+  <data name="DateFormatOpp" xml:space="preserve">
+    <value>yyyy-MM-dd</value>
+  </data>
+  <data name="DateValidMessage" xml:space="preserve">
+    <value>End Date should be greater than Start Date.</value>
+  </data>
+  <data name="DeleteSuccess" xml:space="preserve">
+    <value> Record Deleted Successfully</value>
+  </data>
+  <data name="EnterJob" xml:space="preserve">
+    <value>Please enter valid job number.</value>
+  </data>
+  <data name="EnterNote" xml:space="preserve">
+    <value>Please Enter Note.</value>
+  </data>
+  <data name="FilterIcon" xml:space="preserve">
+    <value>FilterIcon.png</value>
+  </data>
+  <data name="GreenHex" xml:space="preserve">
+    <value>#71D64A</value>
+  </data>
+  <data name="InsertUpdateSuccess" xml:space="preserve">
+    <value> Record Insert/Update Successfully.</value>
+  </data>
+  <data name="InternalUse" xml:space="preserve">
+    <value>On Location (Internal Use)</value>
+  </data>
+  <data name="MethodInsertBoothHeaderData" xml:space="preserve">
+    <value>InsertBoothHeaderData</value>
+  </data>
+  <data name="MethodPutBoothLaborDetails" xml:space="preserve">
+    <value>PutBoothLaborDetails</value>
+  </data>
+  <data name="MethodUpdateBoothHeaderData" xml:space="preserve">
+    <value>UpdateBoothHeaderData</value>
+  </data>
+  <data name="NA" xml:space="preserve">
+    <value>NA</value>
+  </data>
+  <data name="NAWithHash" xml:space="preserve">
+    <value>#NA</value>
+  </data>
+  <data name="RdChecked" xml:space="preserve">
+    <value>rdchecked.png</value>
+  </data>
+  <data name="RdUnChecked" xml:space="preserve">
+    <value>rdunchecked.png</value>
+  </data>
+  <data name="SaveAll" xml:space="preserve">
+    <value>SaveAll</value>
+  </data>
+  <data name="SaveSuccess" xml:space="preserve">
+    <value> Record Save Successfully.</value>
+  </data>
+  <data name="SearchIcon" xml:space="preserve">
+    <value>SearchIcon.png</value>
+  </data>
+  <data name="SelectEmployee" xml:space="preserve">
+    <value>Select Employee</value>
+  </data>
+  <data name="SelectTask" xml:space="preserve">
+    <value>Select Task</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Zero" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Client" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="Dismantle" xml:space="preserve">
+    <value>Dismantle</value>
+  </data>
+  <data name="EnterSearchKeywords" xml:space="preserve">
+    <value>Please enter search keywords.</value>
+  </data>
+  <data name="ExhibitHouse" xml:space="preserve">
+    <value>Exhibit House</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="MaterialsExtras" xml:space="preserve">
+    <value>MaterialsExtras</value>
+  </data>
+  <data name="MethodGetEstDetailsInstallDismantle" xml:space="preserve">
+    <value>GetEstDetails_InstallDismantle</value>
+  </data>
+  <data name="MethodGetEstDetailsMaterialsExtras" xml:space="preserve">
+    <value>GetEstDetails_MaterialsExtras</value>
+    <comment>MethodGetEstDetailsMaterialsExtras</comment>
+  </data>
+  <data name="MethodGetEstDetailsShowServices" xml:space="preserve">
+    <value>GetEstDetails_ShowServices</value>
+  </data>
+  <data name="MethodGetEstimateSummary" xml:space="preserve">
+    <value>GetEstimateSummary</value>
+  </data>
+  <data name="MethodGetProjectDetails" xml:space="preserve">
+    <value>GetProjectDetails</value>
+  </data>
+  <data name="MethodGetProjectStaff" xml:space="preserve">
+    <value>GetProjectStaff</value>
+  </data>
+  <data name="MethodGetUserType" xml:space="preserve">
+    <value>GetUserType</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Record Not Found.</value>
+  </data>
+  <data name="OnLocation" xml:space="preserve">
+    <value>On Location</value>
+  </data>
+  <data name="ResetIcon" xml:space="preserve">
+    <value>ResetIcon.png</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>ShowServices</value>
+  </data>
+  <data name="ShowServices" xml:space="preserve">
+    <value>Show Services</value>
+  </data>
+  <data name="SignHere" xml:space="preserve">
+    <value>Please Signature here.</value>
+  </data>
+  <data name="ChicagoPDF" xml:space="preserve">
+    <value>http://onlocationind.com/city-guides/chicago.pdf</value>
+  </data>
+  <data name="LasPDF" xml:space="preserve">
+    <value>http://onlocationind.com/city-guides/las-vegas.pdf</value>
+  </data>
+  <data name="NYCPDF" xml:space="preserve">
+    <value>http://onlocationind.com/city-guides/nyc.pdf</value>
+  </data>
+  <data name="OrlandoPDF" xml:space="preserve">
+    <value>http://onlocationind.com/city-guides/orlando.pdf</value>
+  </data>
+  <data name="PhiladephiaPDF" xml:space="preserve">
+    <value>http://onlocationind.com/city-guides/philadelphia.pdf</value>
+  </data>
+  <data name="DefaultTimeFormat" xml:space="preserve">
+    <value>12:00 AM</value>
+  </data>
+  <data name="TaskDismantle" xml:space="preserve">
+    <value>0200</value>
+  </data>
+  <data name="TaskInstall" xml:space="preserve">
+    <value>0100</value>
+  </data>
+  <data name="TaskService" xml:space="preserve">
+    <value>0150</value>
+  </data>
+  <data name="TaskTravel" xml:space="preserve">
+    <value>0700</value>
+  </data>
+  <data name="TaskWarehouse" xml:space="preserve">
+    <value>1200</value>
+  </data>
+  <data name="TimeFormat" xml:space="preserve">
+    <value>hh:mm tt</value>
+  </data>
+  <data name="ValidDT" xml:space="preserve">
+    <value>Double Time</value>
+  </data>
+  <data name="ValidEmployee" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="ValidLT" xml:space="preserve">
+    <value>Launch Time</value>
+  </data>
+  <data name="ValidOT" xml:space="preserve">
+    <value>Over Time</value>
+  </data>
+  <data name="ValidST" xml:space="preserve">
+    <value>Straight Time</value>
+  </data>
+  <data name="ValidTask" xml:space="preserve">
+    <value>Task</value>
+  </data>
+  <data name="DateFormatWithTime" xml:space="preserve">
+    <value>MM/dd/yyyy hh:mm tt</value>
+  </data>
+  <data name="IsBusy" xml:space="preserve">
+    <value>IsBusy</value>
+  </data>
+  <data name="WhiteHex" xml:space="preserve">
+    <value>#ffffff</value>
+  </data>
+  <data name="InvoiceURL" xml:space="preserve">
+    <value>https://mstage.onlocationind.com/sites/services/_vti_bin/OliMobile/OliService.svc/</value>
+  </data>
+  <data name="EndHour" xml:space="preserve">
+    <value>End Hour</value>
+  </data>
+  <data name="EndMinute" xml:space="preserve">
+    <value>End Minute</value>
+  </data>
+  <data name="StartHours" xml:space="preserve">
+    <value>Start Hour</value>
+  </data>
+  <data name="StartMinute" xml:space="preserve">
+    <value>Start Minute</value>
+  </data>
+  <data name="BoothCardPermission" xml:space="preserve">
+    <value>You are not authorized to view this page.</value>
+  </data>
+  <data name="BoothSummaryURL" xml:space="preserve">
+    <value>https://mstage.onlocationind.com/sites/services/_vti_bin/OliMobile/OliService.svc/GetBoothcardSummary</value>
+  </data>
+  <data name="BoothSize" xml:space="preserve">
+    <value>Booth Size</value>
+  </data>
+  <data name="Equipment" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="EquipmentQuantity" xml:space="preserve">
+    <value>Equipment Quantity</value>
+  </data>
+  <data name="MaterialUsed" xml:space="preserve">
+    <value>Material Used</value>
+  </data>
+  <data name="NewUpdateMessage" xml:space="preserve">
+    <value>An update is available with new feature, bug fixes and many more.</value>
+  </data>
+  <data name="Pleaseenter" xml:space="preserve">
+    <value>Please enter</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="UnitOfMeasure" xml:space="preserve">
+    <value>Unit Of Measure</value>
+  </data>
+</root>

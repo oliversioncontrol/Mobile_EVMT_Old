@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OnLocationEVMT.Views.EmpTagViewiOS">
+    <ContentView.Content>        
+        <Grid Margin="10,0,10,0" BackgroundColor="#F8F8FF" RowSpacing="0" Padding="0,5,0,5" VerticalOptions="Start">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="0" Grid.Column="0">
+                <Frame HasShadow="True" BackgroundColor="White" Padding="3">
+                    <Frame.HeightRequest>
+                        <OnIdiom x:TypeArguments="x:Double" Phone="60" Tablet="77" />
+                    </Frame.HeightRequest>
+                    <Image x:Name="lblAvatar" HeightRequest="58" WidthRequest="58" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                        <Image.HeightRequest>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="58" Tablet="75" />
+                        </Image.HeightRequest>
+                        <Image.WidthRequest>
+                            <OnIdiom x:TypeArguments="x:Double" Phone="58" Tablet="75" />
+                        </Image.WidthRequest>
+                    </Image>
+                </Frame>
+            </StackLayout>
+            <StackLayout Grid.Row="0" Grid.Column="1">
+                <Frame HasShadow="True" BackgroundColor="White" Padding="5">
+                    <Grid RowSpacing="0" ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" RowSpacing="0" ColumnSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" x:Name="lblName" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" Margin="0,0,10,0">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="16" Tablet="22" />
+                                </Label.FontSize>
+                            </Label>
+                            <Label Grid.Column="1" x:Name="lblDateTime" HorizontalOptions="Start" VerticalOptions="Center">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="18" />
+                                </Label.FontSize>
+                            </Label>
+                        </Grid>                      
+                        <Label Grid.Row="2" x:Name="lblTest" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Label.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="14" Tablet="20" />
+                            </Label.FontSize>
+                        </Label>
+                        <StackLayout Grid.Row="3" VerticalOptions="Start">
+                            <ListView Margin="0,0,0,0" x:Name="lstEmpAccolades" HasUnevenRows="true" RowHeight="170" SeparatorVisibility="None" VerticalOptions="Start">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Margin="0,20,0,20">
+                                                <Frame WidthRequest="76" Padding="5" BackgroundColor="White" Margin="20,20,0,20">
+                                                    <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                                                        <Image  x:Name="img" Source="{Binding img}" HeightRequest="69" WidthRequest="69" HorizontalOptions="Center" VerticalOptions="Start">
+                                                        </Image>
+                                                        <Label x:Name="lbl" Text="{Binding name}" LineBreakMode="WordWrap" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,5">
+                                                            <Label.FontSize>
+                                                                <OnIdiom x:TypeArguments="x:Double" Phone="12" Tablet="12" />
+                                                            </Label.FontSize>
+                                                        </Label>
+                                                    </StackLayout>
+                                                </Frame>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentView.Content>
+</ContentView>
